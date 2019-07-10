@@ -8,17 +8,29 @@ namespace SistemaBibliotecaOnline
 {
     class Program
     {
+        static string[,] baseDeLivros;
+
         static void Main(string[] args)
         {
+            CarregaBaseDeDados();
             MostrarSeja();
-
             if (Opcoes() == 1)
-                Console.WriteLine("\r\nMenu - Alocação de livros ");
+            {
+                Console.Clear();
+                MostrarSeja();
+                Console.WriteLine("Menu - Alocação de livros ");
+                Console.WriteLine("Digite o nome do livro a ser alocado: ");
 
-
+                var nomedolivro = Console.ReadLine();
+                var podeserAlocado = PesquisaLivroParaAlocacao(nomedolivro);
+            }
             Console.ReadKey();
         }
+        
 
+        /// <summary>
+        /// Método que mostra uma mensagem de boas vindas.
+        /// </summary>
         public static void MostrarSeja()
         {
             Console.WriteLine("________________________________________________");
@@ -28,11 +40,11 @@ namespace SistemaBibliotecaOnline
             Console.WriteLine("AAAAAAAAAAAAAAAAAA\n\n");
 
         }
+
         /// <summary>
         /// Método que mostra o conteúdo do menu e as opções de escolha.
         /// </summary>
         /// <returns>Retorna o valor do menu escolhido em um  tipo inteiro.</returns>
-
         public static int Opcoes()
         {
             Console.WriteLine("\r\nMenu - Inicial ");
@@ -45,8 +57,37 @@ namespace SistemaBibliotecaOnline
             return opcao;
 
         }
-        
-        
-        
+
+        /// <summary>
+        /// Método que carrega a base de dados do sistema.
+        /// </summary>
+        public static void CarregaBaseDeDados()
+        {
+            baseDeLivros = new string[2, 2]
+            {
+                { "O pequeno", "Disponível para locação"},
+                { "O grande", "Indisponível para locação"} 
+            };
+        }
+        /// <summary>
+        /// Método que retorna se um livro pode ser alocado.
+        /// </summary>
+        /// <param name="nomedolivro">Nome do livro a ser pesquisado </param>
+        /// <returns>Retorna verdadeiro caso o livro estiver disponível para alocação</returns>
+        public static bool PesquisaLivroParaAlocacao(string nomedolivro)
+        {
+            for (int i = 0; i < baseDeLivros.GetLength(0); i++)
+            {
+                if (nomedolivro == baseDeLivros[i, 0])
+                {
+                    Console.WriteLine($"Status do livro: {baseDeLivros[i, 1]}");
+
+                    return baseDeLivros[i, 1] == "Disponível para locação";
+
+                }
+            }
+            return false;
+        }
+
     }
 }
