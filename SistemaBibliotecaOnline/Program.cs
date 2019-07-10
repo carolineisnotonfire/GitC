@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-
 namespace SistemaBibliotecaOnline
 {
     class Program
@@ -26,17 +20,18 @@ namespace SistemaBibliotecaOnline
                 {
                     Console.WriteLine("Deseja alocar o livro? Sim (y) Não (n)");
                     if (Console.ReadKey().KeyChar.ToString() == "y")
-                        {
+                    {
                         AlocarLivro(nomedolivro);
-                        }
-                    Console.Clear();
-                    Console.WriteLine("Livro Alocado!");
+                        Console.Clear();
+                        Console.WriteLine("Livro Alocado!");
+                    }
+                    else
+                        Console.Clear();
                     Console.WriteLine("Listagem de livros: ");
-
                     for (int i = 0; i < baseDeLivros.GetLength(0); i++)
-                        {
+                    {
                         Console.WriteLine($"Nome: {baseDeLivros[i, 0]}  Disponível: {baseDeLivros[i, 1]}");
-                        }
+                    }
                     {
 
                     }
@@ -82,7 +77,7 @@ namespace SistemaBibliotecaOnline
             baseDeLivros = new string[2, 2]
             {
                 { "O pequeno", "Disponível para locação"},
-                { "O grande", "Indisponível para locação"} 
+                { "O grande", "Indisponível para locação"}
             };
         }
         /// <summary>
@@ -114,7 +109,7 @@ namespace SistemaBibliotecaOnline
             for (int i = 0; i < baseDeLivros.GetLength(0); i++)
             {
                 if (nomedolivro == baseDeLivros[i, 0])
-                    baseDeLivros[i, 1] = "Indisponível";
+                    baseDeLivros[i, 1] = "Indisponível para locação";
             }
         }
     }
