@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace SistemaBibliotecaOnline
 {
     class Program
@@ -20,14 +21,31 @@ namespace SistemaBibliotecaOnline
                 MostrarSeja();
                 Console.WriteLine("Menu - Alocação de livros ");
                 Console.WriteLine("Digite o nome do livro a ser alocado: ");
-
                 var nomedolivro = Console.ReadLine();
-                var podeserAlocado = PesquisaLivroParaAlocacao(nomedolivro);
+                if (PesquisaLivroParaAlocacao(nomedolivro))
+                {
+                    Console.WriteLine("Deseja alocar o livro? Sim (y) Não (n)");
+                    if (Console.ReadKey().KeyChar.ToString() == "y")
+                        {
+                        AlocarLivro(nomedolivro);
+                        }
+                    Console.Clear();
+                    Console.WriteLine("Livro Alocado!");
+                    Console.WriteLine("Listagem de livros: ");
+
+                    for (int i = 0; i < baseDeLivros.GetLength(0); i++)
+                        {
+                        Console.WriteLine($"Nome: {baseDeLivros[i, 0]}  Disponível: {baseDeLivros[i, 1]}");
+                        }
+                    {
+
+                    }
+
+                }
+
             }
             Console.ReadKey();
         }
-        
-
         /// <summary>
         /// Método que mostra uma mensagem de boas vindas.
         /// </summary>
@@ -40,7 +58,6 @@ namespace SistemaBibliotecaOnline
             Console.WriteLine("AAAAAAAAAAAAAAAAAA\n\n");
 
         }
-
         /// <summary>
         /// Método que mostra o conteúdo do menu e as opções de escolha.
         /// </summary>
@@ -57,7 +74,6 @@ namespace SistemaBibliotecaOnline
             return opcao;
 
         }
-
         /// <summary>
         /// Método que carrega a base de dados do sistema.
         /// </summary>
@@ -74,6 +90,7 @@ namespace SistemaBibliotecaOnline
         /// </summary>
         /// <param name="nomedolivro">Nome do livro a ser pesquisado </param>
         /// <returns>Retorna verdadeiro caso o livro estiver disponível para alocação</returns>
+        /// 
         public static bool PesquisaLivroParaAlocacao(string nomedolivro)
         {
             for (int i = 0; i < baseDeLivros.GetLength(0); i++)
@@ -88,6 +105,17 @@ namespace SistemaBibliotecaOnline
             }
             return false;
         }
-
+        /// <summary>
+        /// Método que aloca o livro de acordo com o parametro passado.
+        /// </summary>
+        /// <param name="nomedolivro">Livro a ser alocado</param>
+        public static void AlocarLivro(string nomedolivro)
+        {
+            for (int i = 0; i < baseDeLivros.GetLength(0); i++)
+            {
+                if (nomedolivro == baseDeLivros[i, 0])
+                    baseDeLivros[i, 1] = "Indisponível";
+            }
+        }
     }
 }
