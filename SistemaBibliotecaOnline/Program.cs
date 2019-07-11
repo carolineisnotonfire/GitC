@@ -9,9 +9,15 @@ namespace SistemaBibliotecaOnline
         {
             CarregaBaseDeDados();
             MostrarSeja();
-            if (Opcoes() == 1)
+            var opcaoMenu = Opcoes();
+            while (opcaoMenu != 3)
             {
-                MostrarMenuAlocacao();
+                opcaoMenu = Opcoes();
+                if (opcaoMenu == 1)
+
+                    MostrarMenuAlocacao();
+
+                opcaoMenu = Opcoes();
             }
             Console.ReadKey();
         }
@@ -33,10 +39,12 @@ namespace SistemaBibliotecaOnline
         /// <returns>Retorna o valor do menu escolhido em um  tipo inteiro.</returns>
         public static int Opcoes()
         {
-            Console.WriteLine("\r\nMenu - Inicial ");
+            Console.Clear();
+            Console.WriteLine("Menu - Inicial ");
             Console.WriteLine("O que você deseja realizar?");
             Console.WriteLine("1 - Alocar livro.");
-            Console.WriteLine("2 - Sair do sistema");
+            Console.WriteLine("2 - Devolver livro.");
+            Console.WriteLine("3 - Sair do sistema.");
             Console.WriteLine("Digite o número desejado: ");
 
             int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
