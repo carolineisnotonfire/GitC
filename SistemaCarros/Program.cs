@@ -97,9 +97,12 @@ namespace SistemaCarros
 
                 AlugarCarro(nomedocarro, Console.ReadKey().KeyChar.ToString() == "Y");
                 MostrarLista();
+                
 
-                Console.ReadKey();
+                
             }
+            MostrarHora();
+            Console.ReadKey();
         }
         public static void MostrarLista()
         {
@@ -135,6 +138,11 @@ namespace SistemaCarros
 
             Console.WriteLine($"Menu {operacao}");
             Console.WriteLine("Digite o nome do carro: ");
+        }
+        public static void MostrarHora ()
+        {
+            string horario = DateTime.Now.ToString("yyyy/MM/dd-hh:mm:ss");
+            Console.WriteLine(horario);
         }
     }
 }
