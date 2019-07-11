@@ -10,11 +10,19 @@ namespace SistemaCarros
         static string[,] bancodeCarros;
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
             ListarCarros();
             TeladeInicio();
-            if (MenudeOpcoes() == 1)
+            var opcaoMenu = MenudeOpcoes();
+            while (opcaoMenu != 3)
             {
-                MostrarMenuAluguel();
+                if (MenudeOpcoes() == 1)
+                    AlugarUmCarro();
+                if (MenudeOpcoes() == 2)
+                {
+                    DevolverCarro();
+                }
+                opcaoMenu = MenudeOpcoes();
             }
             Console.ReadKey(); 
         }
@@ -34,9 +42,14 @@ namespace SistemaCarros
         /// <returns>É pra retornar em inteiro</returns>
         public static int MenudeOpcoes()
             {
-                Console.WriteLine("\r\n Menu de escolhas: ");
+                Console.Clear();
+
+                TeladeInicio();
+
+                Console.WriteLine("Menu de escolhas: ");
                 Console.WriteLine("\n 1 - Alugar um carro");
-                Console.WriteLine("\n 2 - Sair do Sistema");
+                Console.WriteLine("\n 2 - Devolver carro");
+                Console.WriteLine("\n 3 - Sair do Sistema");
                 Console.WriteLine("\n Digite o número: ");
                 int.TryParse(Console.ReadKey().KeyChar.ToString(), out int escolha);
                 return escolha;
@@ -63,39 +76,65 @@ namespace SistemaCarros
             }
             return false;
         }
-        public static void AlugarCarro(string nomedocarro)
+        public static void AlugarCarro(string nomedocarro, bool alocar)
         {
             for (int i = 0; i < bancodeCarros.GetLength(0); i++)
             {
                 if (nomedocarro == bancodeCarros[i, 0])
-                    bancodeCarros[i, 2] = "Indisponível para locação";
+                    bancodeCarros[i, 2] = alocar? "Indisponível para locação" : "Disponível para locação";
             }
         }
-        public static void MostrarMenuAluguel()
+        public static void AlugarUmCarro()
         {
-            Console.Clear();
-            TeladeInicio();
-            Console.WriteLine("Digite o carro a ser escolhido: ");
+            MostrarMenuInicialCarros("para alugar carro: ");
+            MostrarLista();
             var nomedocarro = Console.ReadLine();
             if (PesquisaCarrosDisponiveis(nomedocarro))
             {
                 Console.Clear();
-                Console.WriteLine("Você desejar alugar este carro? Sim (Y) Não (N)");
-                if (Console.ReadKey().KeyChar.ToString() == "Y")
-                {
-                    AlugarCarro(nomedocarro);
-                    Console.Clear();
-                    //var data_exp
-                    Console.WriteLine("Carro alugado com sucesso!");
-                }
-                else
-                Console.Clear();
-                Console.WriteLine("Carros: ");
-                for (int i = 0; i < bancodeCarros.GetLength(0); i++)
-                {
-                    Console.WriteLine($"Carro: {bancodeCarros[i, 0]} Ano: {bancodeCarros[i, 1]} Disponibilidade: {bancodeCarros[i, 2]}");
-                }
+                TeladeInicio();
+                Console.WriteLine("Deseja alugar o carro? Sim (Y) Não (N)");
+
+                AlugarCarro(nomedocarro, Console.ReadKey().KeyChar.ToString() == "Y");
+                MostrarLista();
+
+                Console.ReadKey();
             }
+        }
+        public static void MostrarLista()
+        {
+            Console.Clear();
+            Console.WriteLine("Carros/Ano/Disponibilidade:");
+            for (int i = 0; i < bancodeCarros.GetLength(0); i++)
+            {
+                Console.WriteLine($"{bancodeCarros[i, 0]} Ano: {bancodeCarros[i, 1]} Disponibilidade: {bancodeCarros[i, 2]}");
+            }
+        }
+        public static void DevolverCarro()
+        {
+            MostrarMenuInicialCarros("para devolver carro: ");
+            MostrarLista();
+            var nomedocarro = Console.ReadLine();
+            if (!PesquisaCarrosDisponiveis(nomedocarro))
+            {
+                Console.WriteLine("Deseja devolver o carro? Sim (Y) Não (N)");
+
+                AlugarCarro(nomedocarro, Console.ReadKey().KeyChar.ToString() == "N");
+                Console.Clear();
+                MostrarLista();
+
+                Console.ReadKey();
+            }
+
+        }
+        public static void MostrarMenuInicialCarros(string operacao)
+        {
+            Console.Clear();
+
+            TeladeInicio();
+
+            Console.WriteLine($"Menu {operacao}");
+            Console.WriteLine("Digite o nome do carro: ");
         }
     }
 }
