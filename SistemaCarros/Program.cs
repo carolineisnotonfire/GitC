@@ -64,32 +64,46 @@ namespace SistemaCarros
                 {"Honda Civic", "2018", "Indisponível para locação" }
             };
         }
-        public static bool PesquisaCarrosDisponiveis(string nomedocarro)
+        public static bool? PesquisaCarrosDisponiveis(string nomedocarro)
         {
             for (int i = 0; i < bancodeCarros.GetLength(0); i++)
             {
-                if (nomedocarro == bancodeCarros[i, 0])
+                if (CompararNomes(nomedocarro, bancodeCarros[i, 0]))
                 {
                     Console.WriteLine($"{nomedocarro} do ano de {bancodeCarros[i, 1]} \r Disponibilidade:{bancodeCarros[i, 2]} \n");
                     return bancodeCarros[i, 2] == "Disponível para locação";
                 }
             }
-            return false;
+            Console.WriteLine("Nenhum carro encontrado! Deseja realizar a busca novamente? ");
+            Console.WriteLine("Digite a opção desejada: Sim (1) Não (0)");
+            var escolha = Console.ReadLine();
+            int.TryParse(Console.ReadKey().KeyChar.ToString(), out int opcao);
+            while (opcao == 1)
+            {
+                Console.WriteLine("Digite o nome do carro a ser pesquisado: ");
+                nomedocarro = Console.ReadLine();
+                return PesquisaCarrosDisponiveis(nomedocarro);
+            }
+            return null;
         }
         public static void AlugarCarro(string nomedocarro, bool alocar)
         {
             for (int i = 0; i < bancodeCarros.GetLength(0); i++)
             {
-                if (nomedocarro == bancodeCarros[i, 0])
+                if (CompararNomes(nomedocarro, bancodeCarros[i, 0]))
                     bancodeCarros[i, 2] = alocar? "Indisponível para locação" : "Disponível para locação";
             }
+            Console.Clear();
+            TeladeInicio();
+            Console.WriteLine("Carro atualizado com sucesso!");
         }
         public static void AlugarUmCarro()
         {
             MostrarMenuInicialCarros("para alugar carro: ");
             MostrarLista();
             var nomedocarro = Console.ReadLine();
-            if (PesquisaCarrosDisponiveis(nomedocarro))
+            var resultadoPesquisa = PesquisaCarrosDisponiveis(nomedocarro);
+            if (resultadoPesquisa != null && resultadoPesquisa == true)
             {
                 Console.Clear();
                 TeladeInicio();
@@ -97,12 +111,15 @@ namespace SistemaCarros
 
                 AlugarCarro(nomedocarro, Console.ReadKey().KeyChar.ToString() == "Y");
                 MostrarLista();
-                
 
+                Console.ReadKey();
                 
             }
-            MostrarHora();
-            Console.ReadKey();
+            if (resultadoPesquisa == null)
+            {
+                Console.WriteLine("Resultado não encontrado");
+            }
+
         }
         public static void MostrarLista()
         {
@@ -118,7 +135,8 @@ namespace SistemaCarros
             MostrarMenuInicialCarros("para devolver carro: ");
             MostrarLista();
             var nomedocarro = Console.ReadLine();
-            if (!PesquisaCarrosDisponiveis(nomedocarro))
+            var resultadoPesquisa = PesquisaCarrosDisponiveis(nomedocarro);
+            if (resultadoPesquisa != null && resultadoPesquisa == false)
             {
                 Console.WriteLine("Deseja devolver o carro? Sim (Y) Não (N)");
 
@@ -128,6 +146,10 @@ namespace SistemaCarros
                 MostrarHora();
 
                 Console.ReadKey();
+            }
+            if (resultadoPesquisa == null)
+            {
+                Console.WriteLine("Nenhum resultado encontrado");
             }
 
         }
@@ -144,6 +166,15 @@ namespace SistemaCarros
         {
             string horario = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
             Console.WriteLine("Horário: " + horario);
+        }
+        public static bool CompararNomes(string primeiroAComparar, string segundoAComparar)
+        {
+            if (primeiroAComparar.ToLower().Replace(" ","") ==
+                segundoAComparar.ToLower().Replace(" ", ""))
+            
+                return true;
+            
+            return false;
         }
     }
 }
