@@ -28,8 +28,11 @@ namespace SistemaBebidasSEXTACHERA
         public static void CompararIdade()
         {
             Console.WriteLine("Nome: ");
+
             var nome = Console.ReadLine();
+
             Console.WriteLine("Idade: ");
+
             string line = Console.ReadLine();
             int idade = Convert.ToInt32(line);
             if (idade > 17)
