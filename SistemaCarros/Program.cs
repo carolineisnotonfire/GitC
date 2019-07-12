@@ -125,6 +125,7 @@ namespace SistemaCarros
                 AlugarCarro(nomedocarro, Console.ReadKey().KeyChar.ToString() == "N");
                 Console.Clear();
                 MostrarLista();
+                MostrarHora();
 
                 Console.ReadKey();
             }
@@ -141,8 +142,8 @@ namespace SistemaCarros
         }
         public static void MostrarHora ()
         {
-            string horario = DateTime.Now.ToString("yyyy/MM/dd-hh:mm:ss");
-            Console.WriteLine(horario);
+            string horario = DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss");
+            Console.WriteLine("Horário: " + horario);
         }
     }
 }

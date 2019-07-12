@@ -13,7 +13,6 @@ namespace SistemaBibliotecaOnline
                 opcaoMenu = Opcoes();
                 if (opcaoMenu == 1)
                     AlocarUmLivro();
-
                 if (opcaoMenu == 2)
                 {
                     DesalocarUmLivro();
@@ -69,19 +68,28 @@ namespace SistemaBibliotecaOnline
         /// <param name="nomedolivro">Nome do livro a ser pesquisado </param>
         /// <returns>Retorna verdadeiro caso o livro estiver disponível para alocação</returns>
         /// 
-        public static bool PesquisaLivroParaAlocacao(string nomedolivro)
+        public static bool? PesquisaLivroParaAlocacao(string nomedolivro)
         {
             for (int i = 0; i < baseDeLivros.GetLength(0); i++)
             {
-                if (nomedolivro == baseDeLivros[i, 0])
+                if (CompararNomes(nomedolivro, baseDeLivros[i, 0]))
                 {
                     Console.WriteLine($"Status do livro: {baseDeLivros[i, 1]}");
 
                     return baseDeLivros[i, 1] == "Disponível para locação";
-
                 }
+
             }
-            return false;
+            Console.WriteLine("Nenhum livro encontrado! Deseja realizar a busca novamente?");
+            Console.WriteLine("Digite a opção desejada: sim (s) não (n)");
+            int.TryParse(Console.ReadKey().KeyChar.ToString(), out int escolha);
+            while (escolha == 1)
+            {
+                Console.WriteLine("Digite o nome do livro a ser pesquisado: ");
+                nomedolivro = Console.ReadLine();
+                return PesquisaLivroParaAlocacao(nomedolivro);
+            }
+            return null;
         }
         /// <summary>
         /// Método para alterar a informação de alocação de livro.
@@ -92,9 +100,9 @@ namespace SistemaBibliotecaOnline
         {
             for (int i = 0; i < baseDeLivros.GetLength(0); i++)
             {
-                if (nomedolivro == baseDeLivros[i, 0])
+                if (CompararNomes(nomedolivro, baseDeLivros[i, 0]))
                 {
-                    baseDeLivros[i, 1] = alocar? "não" : "sim";
+                    baseDeLivros[i, 1] = alocar ? "não" : "sim";
                 }
             }
 
@@ -105,19 +113,27 @@ namespace SistemaBibliotecaOnline
             Console.WriteLine("Livro atualizado com sucesso!");
         }
         public static void AlocarUmLivro()
+        {
+            MostrarMenuInicialLivros("Alocar um livro: ");
+            var nomedolivro = Console.ReadLine();
+            var resultadoPesquisa = PesquisaLivroParaAlocacao(nomedolivro);
+            if (resultadoPesquisa != null && resultadoPesquisa == true)
             {
-                MostrarMenuInicialLivros("Alocar um livro: ");
-                var nomedolivro = Console.ReadLine();
-                if (PesquisaLivroParaAlocacao(nomedolivro))
-                {
-                    Console.WriteLine("Deseja alocar o livro? Sim (y) Não (n)");
+                Console.Clear();
+                MostrarSeja();
+                Console.WriteLine("Deseja alocar o livro? Sim (y) Não (n)");
 
-                    AlocarLivro(nomedolivro, Console.ReadKey().KeyChar.ToString() == "y");
-                    MostrarLista();
+                AlocarLivro(nomedolivro, Console.ReadKey().KeyChar.ToString() == "y");
+                MostrarLista();
 
-                    Console.ReadKey();
-                }
+                Console.ReadKey();
             }
+
+            if (resultadoPesquisa == null)
+            {
+                Console.WriteLine("Nenhum resultado encontrado");
+            }
+        }
         /// <summary>
         /// Método que mostra a lista de livros atualizado.s
         /// </summary>
@@ -134,14 +150,21 @@ namespace SistemaBibliotecaOnline
             MostrarMenuInicialLivros("Desalocar um livro: ");
             MostrarLista();
             var nomedolivro = Console.ReadLine();
-            if (!PesquisaLivroParaAlocacao(nomedolivro))
+            var resultadoPesquisa = PesquisaLivroParaAlocacao(nomedolivro);
+            if (resultadoPesquisa != null && resultadoPesquisa == false)
             {
+                Console.Clear();
+                MostrarSeja();
                 Console.WriteLine("Deseja desalocar o livro? Sim (y) Não (n)");
 
                 AlocarLivro(nomedolivro, Console.ReadKey().KeyChar.ToString() == "n");
                 MostrarLista();
 
                 Console.ReadKey();
+            }
+            if (resultadoPesquisa == null)
+            {
+                Console.WriteLine("Nenhum resultado encontrado");
             }
         }
         public static void MostrarMenuInicialLivros(string operacao)
@@ -153,5 +176,14 @@ namespace SistemaBibliotecaOnline
             Console.WriteLine($"Menu {operacao}");
             Console.WriteLine("Digite o nome do livro para realizar a operação: ");
         }
+        public static bool CompararNomes(string primeiro, string segundo)
+        {
+            if (primeiro.ToLower().Replace(" ", "") ==
+                segundo.ToLower().Replace(" ", ""))
+
+                return true;
+            return false;
+        }   
+            
     }
 }
