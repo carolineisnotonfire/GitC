@@ -12,8 +12,8 @@ namespace CriacaodeListas
         {
             // iniciando lista de string com array linear
             string[] lista = new string[5];//aqui define as posições dalista
-                                          //iniciando ela com 10 espaços na memoria
-                                          //pra alocar informações de texto
+                                           //iniciando ela com 10 espaços na memoria
+                                           //pra alocar informações de texto
 
             //laço usado geralmente para andar sobre as posições da lista
             for (int i = 0; i < lista.Length; i++)
@@ -28,8 +28,16 @@ namespace CriacaodeListas
 
             // varre as lista de jeito mais simples
             foreach (var item in lista)
-            
+
                 Console.WriteLine(item); //escreve na tela a informação
+
+            Console.ReadKey();
+
+
+            for (int i = 0; i < lista.Length; i++)
+            {
+                lista[i] = string.Empty; // limpa o valor da coleção
+            }
 
             Console.ReadKey();
         }
