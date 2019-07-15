@@ -87,16 +87,23 @@ namespace ListaExemplo
         }
         public static void Deleta(ref string[,] listaMusica)
         {
-                Console.Write("Posição do item a ser deletado: ");
-                var pos = Console.ReadLine();
-                pos = string.Empty;            
-                Console.WriteLine(pos);
-                Console.WriteLine("Lista de álbuns: ");
 
-                for (int i = 0; i < listaMusica.GetLength(0); i++)
+            for (int i = 0; i < listaMusica.GetLength(0); i++)
+                Console.WriteLine($"ID: {listaMusica[i,0]} Nome: {listaMusica[i,1]} Idade {listaMusica[i,2]}");
 
-                    Console.WriteLine(string.Format("ID do Álbum: {0 } Álbum: {1} Ano: {2}", listaMusica[i, 0], listaMusica[i, 1], listaMusica[i, 2]));
-                    Console.ReadKey();
+            Console.WriteLine("ID de registro a ser removido: ");
+            var id = Console.ReadLine();
+
+            for (int i = 0; i < listaMusica.GetLength(0); i++)
+            {
+                if (listaMusica[i,0] == id)
+                {
+                    listaMusica[i, 0] = null;
+                    listaMusica[i, 1] = null;
+                    listaMusica[i, 2] = null;
+                }
+            }
+
 
         }
     }
