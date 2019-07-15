@@ -33,8 +33,7 @@ namespace SistemaBebidasSEXTACHERA
 
             Console.WriteLine("Idade: ");
 
-            string line = Console.ReadLine();
-            int idade = Convert.ToInt32(line);
+            int.TryParse(Console.ReadLine(), out int idade);
             if (idade > 17)
             {
                 Console.WriteLine($"Beleza, pó bebe, {nome}");
