@@ -14,6 +14,7 @@ namespace ProjetoFinalConsole
             string[,] listaLivros = new string[2, 5];
             int IDLista = 0;
             Console.BackgroundColor = ConsoleColor.DarkCyan;
+            Console.ForegroundColor = ConsoleColor.Black;
             var escolhaInicial = MenuInicial();
             while (true)
             {
