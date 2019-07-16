@@ -93,17 +93,17 @@ namespace ListaExemplo
         {
             Console.WriteLine("Lista de álbuns: ");
             if (mostrarRegistrosNAtivos == "true")
-            
+
                 Console.WriteLine("Registros desativados dentro do sistema.");
-            
+
 
             for (int i = 0; i < listaMusica.GetLength(0); i++)
             {
                 if (listaMusica[i, 3] != mostrarRegistrosNAtivos)
-                Console.WriteLine($"ID {listaMusica[i, 0]} " +
-                          $"- Álbum:{listaMusica[i, 1]} " +
-                          $"- Ano:{listaMusica[i, 2]}" +
-                          $"- Data Alteração:{listaMusica[i, 4]}");
+                    Console.WriteLine($"ID {listaMusica[i, 0]} " +
+                              $"- Álbum:{listaMusica[i, 1]} " +
+                              $"- Ano:{listaMusica[i, 2]}" +
+                              $"- Data Alteração:{listaMusica[i, 4]}");
             }
             Console.WriteLine("Resultados apresentados com sucesso!");
             Console.WriteLine("Para voltar ao menu inicial informar qualquer tecla.");
@@ -138,4 +138,3 @@ namespace ListaExemplo
 
     }
 }
-
