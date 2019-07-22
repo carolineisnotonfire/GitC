@@ -1,0 +1,17 @@
+SET IDENTITY_INSERT [dbo].[Locacao] ON
+INSERT INTO [dbo].[Locacao] ([Id], [Cliente], [Carro], [Dat], [UsuInc], [UsuAlt], [DatInc], [DatAlt]) VALUES (1, 1, 2, N'2019-01-02', 1, 1, N'2019-07-22 15:05:17', N'2019-07-22 15:05:17')
+INSERT INTO [dbo].[Locacao] ([Id], [Cliente], [Carro], [Dat], [UsuInc], [UsuAlt], [DatInc], [DatAlt]) VALUES (2, 2, 2, N'2018-02-13', 1, 1, N'2019-07-22 15:05:28', N'2019-07-22 15:05:28')
+INSERT INTO [dbo].[Locacao] ([Id], [Cliente], [Carro], [Dat], [UsuInc], [UsuAlt], [DatInc], [DatAlt]) VALUES (3, 3, 5, N'2019-06-14', 1, 1, N'2019-07-22 15:05:39', N'2019-07-22 15:05:39')
+INSERT INTO [dbo].[Locacao] ([Id], [Cliente], [Carro], [Dat], [UsuInc], [UsuAlt], [DatInc], [DatAlt]) VALUES (4, 4, 2, N'2019-06-21', 1, 1, N'2019-07-22 15:05:49', N'2019-07-22 15:05:49')
+INSERT INTO [dbo].[Locacao] ([Id], [Cliente], [Carro], [Dat], [UsuInc], [UsuAlt], [DatInc], [DatAlt]) VALUES (5, 5, 3, N'2018-07-21', 1, 1, N'2019-07-22 15:06:03', N'2019-07-22 15:06:03')
+INSERT INTO [dbo].[Locacao] ([Id], [Cliente], [Carro], [Dat], [UsuInc], [UsuAlt], [DatInc], [DatAlt]) VALUES (6, 6, 2, N'2019-05-17', 1, 1, N'2019-07-22 15:06:16', N'2019-07-22 15:06:16')
+INSERT INTO [dbo].[Locacao] ([Id], [Cliente], [Carro], [Dat], [UsuInc], [UsuAlt], [DatInc], [DatAlt]) VALUES (7, 7, 5, N'2019-06-06', 1, 1, N'2019-07-22 15:06:25', N'2019-07-22 15:06:25')
+INSERT INTO [dbo].[Locacao] ([Id], [Cliente], [Carro], [Dat], [UsuInc], [UsuAlt], [DatInc], [DatAlt]) VALUES (8, 8, 8, N'2019-05-13', 1, 1, N'2019-07-22 15:06:37', N'2019-07-22 15:06:37')
+INSERT INTO [dbo].[Locacao] ([Id], [Cliente], [Carro], [Dat], [UsuInc], [UsuAlt], [DatInc], [DatAlt]) VALUES (9, 9, 1, N'2019-04-24', 1, 1, N'2019-07-22 15:06:51', N'2019-07-22 15:06:51')
+INSERT INTO [dbo].[Locacao] ([Id], [Cliente], [Carro], [Dat], [UsuInc], [UsuAlt], [DatInc], [DatAlt]) VALUES (10, 10, 6, N'2019-02-25', 1, 1, N'2019-07-22 15:07:01', N'2019-07-22 15:07:01')
+INSERT INTO [dbo].[Locacao] ([Id], [Cliente], [Carro], [Dat], [UsuInc], [UsuAlt], [DatInc], [DatAlt]) VALUES (11, 11, 2, N'2019-05-02', 1, 1, N'2019-07-22 15:18:08', N'2019-07-22 15:18:08')
+INSERT INTO [dbo].[Locacao] ([Id], [Cliente], [Carro], [Dat], [UsuInc], [UsuAlt], [DatInc], [DatAlt]) VALUES (12, 12, 5, N'2019-06-21', 1, 1, N'2019-07-22 15:18:19', N'2019-07-22 15:18:19')
+INSERT INTO [dbo].[Locacao] ([Id], [Cliente], [Carro], [Dat], [UsuInc], [UsuAlt], [DatInc], [DatAlt]) VALUES (13, 13, 3, N'2019-07-21', 1, 1, N'2019-07-22 15:18:30', N'2019-07-22 15:18:30')
+INSERT INTO [dbo].[Locacao] ([Id], [Cliente], [Carro], [Dat], [UsuInc], [UsuAlt], [DatInc], [DatAlt]) VALUES (14, 14, 5, N'2019-09-21', 1, 1, N'2019-07-22 15:18:41', N'2019-07-22 15:18:41')
+INSERT INTO [dbo].[Locacao] ([Id], [Cliente], [Carro], [Dat], [UsuInc], [UsuAlt], [DatInc], [DatAlt]) VALUES (15, 15, 2, N'2018-02-01', 1, 1, N'2019-07-22 15:19:05', N'2019-07-22 15:19:05')
+SET IDENTITY_INSERT [dbo].[Locacao] OFF
