@@ -12,8 +12,7 @@ namespace MeuCarro4x4Class
         static void Main(string[] args)
         {
             var teste = new Carro();
-            teste.Rodas = 5;
-            teste.janelas = 5;
+            teste++;
             teste.MostrarCarro();
             
         }
