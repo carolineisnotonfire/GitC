@@ -44,19 +44,15 @@ namespace ListaCompacta.Criacao
                 //indica a lista que desejamos varrer
                 Console.WriteLine(item);//Aqui apresentamos essa informação na tela
 
-
+            Console.ReadKey();
         }
         
         public void LimparValores()
         {
-                          //Laço de repetição que usamos para varrer nossa lista de maneira mais simples
-            foreach (var item in lista)//"var item" indica uma unidade da nossa lista "in lista" 
-                //indica a lista que desejamos varrer
-                Console.WriteLine(item);//Aqui apresentamos essa informação na tela
-            for (int i = 0; i<lista.Length; i++)
+
+            for (int i = 0; i < lista.Length; i++)
                 lista[i] = string.Empty;//Aqui limpamos o nosso valor dentro da coleção
 
-            Console.ReadKey();
         }
 
         
