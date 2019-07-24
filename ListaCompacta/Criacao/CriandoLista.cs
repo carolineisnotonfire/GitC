@@ -18,7 +18,6 @@ namespace ListaCompacta.Criacao
             VarrerLista();
             LimparValores();
             VarrerLista();
-
         }
         public void CarregarLista()
         {
@@ -31,10 +30,6 @@ namespace ListaCompacta.Criacao
                 //DateTime e um tipo do .net c# que disponibiliza funções relacionadas a datas
                 //e horas, ou seja se precisar trabalhar com essas informações é possivel usar esse cara.
             }
-
-
-
-
         }
 
         public void VarrerLista()
@@ -54,7 +49,6 @@ namespace ListaCompacta.Criacao
                 lista[i] = string.Empty;//Aqui limpamos o nosso valor dentro da coleção
 
         }
-
         
     }
 }
