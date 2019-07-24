@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListaBiSimplesComClass", "ListaBiSimplesComClass.csproj", "{14BC81C2-873E-4C43-A809-9CD0923AD880}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14BC81C2-873E-4C43-A809-9CD0923AD880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14BC81C2-873E-4C43-A809-9CD0923AD880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14BC81C2-873E-4C43-A809-9CD0923AD880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14BC81C2-873E-4C43-A809-9CD0923AD880}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0CC6C28D-C353-4451-BC82-6D699B792D5F}
+	EndGlobalSection
+EndGlobal
