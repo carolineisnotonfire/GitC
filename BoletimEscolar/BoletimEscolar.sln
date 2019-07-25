@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImprimeBoletim", "ImprimeBoletim\ImprimeBoletim.csproj", "{F96E13C8-C67D-4429-B146-C2E3F1296267}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecebeFrequencia", "RecebeFrequencia\RecebeFrequencia.csproj", "{C41B3A7B-8D9A-4C97-89B2-96EC7057D537}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F96E13C8-C67D-4429-B146-C2E3F1296267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F96E13C8-C67D-4429-B146-C2E3F1296267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F96E13C8-C67D-4429-B146-C2E3F1296267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F96E13C8-C67D-4429-B146-C2E3F1296267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C41B3A7B-8D9A-4C97-89B2-96EC7057D537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C41B3A7B-8D9A-4C97-89B2-96EC7057D537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C41B3A7B-8D9A-4C97-89B2-96EC7057D537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C41B3A7B-8D9A-4C97-89B2-96EC7057D537}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {266E44D2-BE5B-475E-A8D3-F67B646F4F3D}
+	EndGlobalSection
+EndGlobal
