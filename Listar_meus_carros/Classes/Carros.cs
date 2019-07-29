@@ -12,5 +12,10 @@ namespace Listar_meus_carros.Classes
         public int Ano { get; set; }
         public string Placa { get; set; }
         public int Cv { get; set; }
+
+        internal void Add(Carros carros)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
