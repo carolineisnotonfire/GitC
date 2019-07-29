@@ -34,10 +34,26 @@ namespace Principal.Classes
         {
             for (int i = 0; i < listaCarros.GetLength(0); i++)
             {
-                if (listaCarros[i,3] == null)
+                Console.WriteLine($"ID {listaCarros[i, 0]} " +
+                          $"- Placa:{listaCarros[i, 1]} " +
+                          $"- Modelo:{listaCarros[i, 2]}" +
+                          $"Entrada: {listaCarros[i, 3]}");
+                if (listaCarros[i,4] == null)
                 {
-                    listaCarros[i, 3] = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
+                    Console.WriteLine("");
                 }
+            }
+            
+        }
+        public void listar()
+        {
+            Console.WriteLine("Apresentação das informações dentro da base de dados.");
+            for (int i = 0; i < listaCarros.GetLength(0); i++)
+            {
+                    Console.WriteLine($"ID {listaCarros[i, 0]} " +
+                          $"- Placa:{listaCarros[i, 1]} " +
+                          $"- Modelo:{listaCarros[i, 2]}" +
+                          $"Entrada: {listaCarros[i,3]}");
             }
         }
     }

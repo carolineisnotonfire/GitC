@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C10E6BB9-7458-406B-8ADC-CC87940979F4}</ProjectGuid>
+    <ProjectGuid>{CBD02793-DD56-47F4-8C15-BCF6E8091614}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ProjetoCalc</RootNamespace>
-    <AssemblyName>ProjetoCalc</AssemblyName>
+    <RootNamespace>UsandoBibliotecaJoinha</RootNamespace>
+    <AssemblyName>UsandoBibliotecaJoinha</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculadora.cs" />
-    <Compile Include="Classes\Calc.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MostrarJoinha\MostrarJoinha.csproj">
+      <Project>{52a91b0d-6748-4cbe-9462-6d04e208ac38}</Project>
+      <Name>MostrarJoinha</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

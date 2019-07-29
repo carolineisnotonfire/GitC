@@ -13,6 +13,7 @@ namespace Principal
         {
             ImprimeEstacionamento imp = new ImprimeEstacionamento();
             imp.inserir();
+            imp.listar();
 
             Console.ReadKey();
         }
