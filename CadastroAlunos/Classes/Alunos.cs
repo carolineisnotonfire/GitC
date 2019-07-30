@@ -10,5 +10,6 @@ namespace CadastroAlunos.Classes
     {
         public string Nome { get; set; }
         public int Idade { get; set; }
+        public DateTime DatInc { get; set; } = DateTime.Now;
     }
 }

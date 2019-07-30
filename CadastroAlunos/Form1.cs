@@ -26,6 +26,13 @@ namespace CadastroAlunos
             TeladeCadastro formCad = new TeladeCadastro();
             formCad.ShowDialog();
             aluno.Add(formCad.novoAluno);
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = aluno;
+
+        }
+
+        private void DataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
