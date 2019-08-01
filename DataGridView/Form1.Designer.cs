@@ -31,13 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.deleteCommand = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.carrosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.querysInnerJoinDataSet1 = new DataGridView.QuerysInnerJoinDataSet1();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.carrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.carrosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.carrosTableAdapter = new DataGridView.QuerysInnerJoinDataSet1TableAdapters.CarrosTableAdapter();
+            this.querysInnerJoinDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deleteCommand = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.anoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,15 +54,10 @@
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deleteCommandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carrosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.querysInnerJoinDataSet1 = new DataGridView.QuerysInnerJoinDataSet1();
-            this.carrosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.carrosTableAdapter = new DataGridView.QuerysInnerJoinDataSet1TableAdapters.CarrosTableAdapter();
-            this.querysInnerJoinDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +71,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.deleteCommand,
+            this.editar,
             this.idDataGridViewTextBoxColumn,
             this.modeloDataGridViewTextBoxColumn,
             this.anoDataGridViewTextBoxColumn,
@@ -81,23 +83,24 @@
             this.datAltDataGridViewTextBoxColumn,
             this.deleteCommandDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.carrosBindingSource2;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 54);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 52);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(799, 398);
+            this.dataGridView1.Size = new System.Drawing.Size(665, 398);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
-            // deleteCommand
+            // carrosBindingSource2
             // 
-            this.deleteCommand.DataPropertyName = "deleteCommand";
-            this.deleteCommand.HeaderText = "Delete";
-            this.deleteCommand.MinimumWidth = 6;
-            this.deleteCommand.Name = "deleteCommand";
-            this.deleteCommand.ReadOnly = true;
-            this.deleteCommand.Width = 125;
+            this.carrosBindingSource2.DataMember = "Carros";
+            this.carrosBindingSource2.DataSource = this.querysInnerJoinDataSet1;
+            // 
+            // querysInnerJoinDataSet1
+            // 
+            this.querysInnerJoinDataSet1.DataSetName = "QuerysInnerJoinDataSet1";
+            this.querysInnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -107,7 +110,6 @@
             this.button1.Size = new System.Drawing.Size(164, 35);
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
@@ -141,13 +143,48 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(671, 12);
+            this.button5.Location = new System.Drawing.Point(671, 77);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(128, 36);
             this.button5.TabIndex = 5;
             this.button5.Text = "Lixeira";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.Button5_Click);
+            // 
+            // carrosBindingSource1
+            // 
+            this.carrosBindingSource1.DataMember = "Carros";
+            this.carrosBindingSource1.DataSource = this.querysInnerJoinDataSet1;
+            // 
+            // carrosTableAdapter
+            // 
+            this.carrosTableAdapter.ClearBeforeFill = true;
+            // 
+            // querysInnerJoinDataSet1BindingSource
+            // 
+            this.querysInnerJoinDataSet1BindingSource.DataSource = this.querysInnerJoinDataSet1;
+            this.querysInnerJoinDataSet1BindingSource.Position = 0;
+            // 
+            // deleteCommand
+            // 
+            this.deleteCommand.DataPropertyName = "deleteCommand";
+            this.deleteCommand.HeaderText = "Delete";
+            this.deleteCommand.MinimumWidth = 6;
+            this.deleteCommand.Name = "deleteCommand";
+            this.deleteCommand.ReadOnly = true;
+            this.deleteCommand.Text = "Deletar";
+            this.deleteCommand.UseColumnTextForButtonValue = true;
+            this.deleteCommand.Width = 125;
+            // 
+            // editar
+            // 
+            this.editar.HeaderText = "Editar";
+            this.editar.MinimumWidth = 6;
+            this.editar.Name = "editar";
+            this.editar.ReadOnly = true;
+            this.editar.Text = "Editar";
+            this.editar.UseColumnTextForButtonValue = true;
+            this.editar.Width = 125;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -239,30 +276,6 @@
             this.deleteCommandDataGridViewTextBoxColumn.ReadOnly = true;
             this.deleteCommandDataGridViewTextBoxColumn.Width = 125;
             // 
-            // carrosBindingSource2
-            // 
-            this.carrosBindingSource2.DataMember = "Carros";
-            this.carrosBindingSource2.DataSource = this.querysInnerJoinDataSet1;
-            // 
-            // querysInnerJoinDataSet1
-            // 
-            this.querysInnerJoinDataSet1.DataSetName = "QuerysInnerJoinDataSet1";
-            this.querysInnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // carrosBindingSource1
-            // 
-            this.carrosBindingSource1.DataMember = "Carros";
-            this.carrosBindingSource1.DataSource = this.querysInnerJoinDataSet1;
-            // 
-            // carrosTableAdapter
-            // 
-            this.carrosTableAdapter.ClearBeforeFill = true;
-            // 
-            // querysInnerJoinDataSet1BindingSource
-            // 
-            this.querysInnerJoinDataSet1BindingSource.DataSource = this.querysInnerJoinDataSet1;
-            this.querysInnerJoinDataSet1BindingSource.Position = 0;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -280,9 +293,9 @@
             this.Text = "Sistema de Carros";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1BindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -293,7 +306,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewButtonColumn deleteCommand;
         private System.Windows.Forms.BindingSource carrosBindingSource;
         private QuerysInnerJoinDataSet1TableAdapters.CarrosTableAdapter carrosTableAdapter;
         private System.Windows.Forms.BindingSource carrosBindingSource1;
@@ -301,6 +313,11 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.BindingSource carrosBindingSource2;
+        private System.Windows.Forms.BindingSource querysInnerJoinDataSet1BindingSource;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridViewButtonColumn deleteCommand;
+        private System.Windows.Forms.DataGridViewButtonColumn editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modeloDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn anoDataGridViewTextBoxColumn;
@@ -311,9 +328,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn datIncDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datAltDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn deleteCommandDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource carrosBindingSource2;
-        private System.Windows.Forms.BindingSource querysInnerJoinDataSet1BindingSource;
-        private System.Windows.Forms.Button button5;
     }
 }
 

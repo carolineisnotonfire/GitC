@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridView.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,25 +25,21 @@ namespace DataGridView
             // TODO: This line of code loads data into the 'querysInnerJoinDataSet.Carros' table. You can move, or remove it, as needed.
 
         }
-
         private void Button2_Click(object sender, EventArgs e)
         {
             Form2 frmMarcas = new Form2();
             frmMarcas.ShowDialog();
         }
-
         private void Button3_Click(object sender, EventArgs e)
         {
             Form3 frmUsuarios = new Form3();
             frmUsuarios.ShowDialog();
         }
-
         private void Button4_Click(object sender, EventArgs e)
         {
             Form4 frmVendas = new Form4();
             frmVendas.ShowDialog();
         }
-
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             var carSelect = ((System.Data.DataRowView)this.dataGridView1.Rows
@@ -54,19 +51,16 @@ namespace DataGridView
                     {
                         this.carrosTableAdapter.DeleteQuery(carSelect.Id);
                     }break;
+                case 1: {
+                        frmEdicaoCarros editCarro = new frmEdicaoCarros();
+                        editCarro.CarrosRow = carSelect;
+                        editCarro.ShowDialog();
+                        this.carrosTableAdapter.Update(editCarro.CarrosRow) ;
 
+                    }
+                    break;
             }
-
-            this.carrosTableAdapter.CustomQuery(querysInnerJoinDataSet1.Carros);
-
-
         }
-
-        private void Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Button5_Click(object sender, EventArgs e)
         {
             Lixeira lixo = new Lixeira();
