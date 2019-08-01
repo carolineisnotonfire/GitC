@@ -35,11 +35,13 @@ namespace DataGridView
             {
                 case 0:
                     {
-                      //  this.carrosTableAdapter.UpdateQuery(lixSelect.Id);
+                        this.carrosTableAdapter.UpdateQuery1(lixSelect.Id);
                     }
                     break;
 
             }
+            this.carrosTableAdapter.CustomInativeValues(this.querysInnerJoinDataSet1.Carros);
+
 
         }
     }

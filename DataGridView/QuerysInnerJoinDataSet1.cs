@@ -9,3 +9,10 @@
         }
     }
 }
+
+namespace DataGridView.QuerysInnerJoinDataSet1TableAdapters {
+    
+    
+    public partial class VendasTableAdapter {
+    }
+}

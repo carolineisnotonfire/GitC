@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridView.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,7 @@ namespace DataGridView
         private void Form2_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'querysInnerJoinDataSet1.Marcas' table. You can move, or remove it, as needed.
-            this.marcasTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Marcas);
+            this.marcasTableAdapter.Fill(this.querysInnerJoinDataSet1.Marcas);
 
         }
 
@@ -35,6 +36,15 @@ namespace DataGridView
                     {
                         this.marcasTableAdapter.DeleteQuery(marSelect.Id);
 
+                    }
+                    break;
+                case 1:
+                    {
+                        frmEdicaoMarcas editMarca = new frmEdicaoMarcas();
+
+                        editMarca.MarcasRow = marSelect;
+                        editMarca.ShowDialog();
+                        this.marcasTableAdapter.Update(editMarca.MarcasRow);
                     }
                     break;
 
