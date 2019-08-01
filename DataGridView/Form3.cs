@@ -43,9 +43,10 @@ namespace DataGridView
                     break;
                 case 1:
                     {
-                        frmEdicaoVendas editVendas = new frmEdicaoVendas();
-
-                        editVendas.VendasRow = venSelect;
+                        frmEdicaoVendas editVendas = new frmEdicaoVendas
+                        {
+                            VendasRow = venSelect
+                        };
                         editVendas.ShowDialog();
                         this.vendasTableAdapter.Update(editVendas.VendasRow);
                     }

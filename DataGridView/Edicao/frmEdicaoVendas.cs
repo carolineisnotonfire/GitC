@@ -18,23 +18,24 @@ namespace DataGridView.Edicao
         }
         public DataGridView.QuerysInnerJoinDataSet1.VendasRow VendasRow;
 
-        private void FrmEdicaoVendas_Load(object sender, EventArgs e)
-        {
-
-            VendasRow.Carro = Convert.ToInt32 (textBox1.Text);
-            VendasRow.Quantidade = Convert.ToInt32 (textBox1.Text);
-            VendasRow.Valor = Convert.ToInt32 (textBox1.Text);
-        }
+        //private void FrmEdicaoVendas_Load(object sender, EventArgs e)
+        //{
+        //
+        //    VendasRow.Carro = Convert.ToInt32 (textBox1.Text);
+        //    VendasRow.Quantidade = Convert.ToInt32 (textBox1.Text);
+        //    VendasRow.Valor = Convert.ToDecimal (textBox1.Text);
+        //}
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            VendasRow.Carro = Convert.ToInt32 (textBox1.Text);
+            VendasRow.Carro = Convert.ToInt32(textBox1.Text);
             VendasRow.Quantidade = Convert.ToInt32 (textBox1.Text);
-            VendasRow.Valor = Convert.ToInt32 (textBox1.Text);
+            VendasRow.Valor = Convert.ToDecimal (textBox1.Text);
 
             this.Close();
 
         }
+
 
     }
 }

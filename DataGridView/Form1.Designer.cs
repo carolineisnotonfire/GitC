@@ -31,17 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.carrosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.querysInnerJoinDataSet1 = new DataGridView.QuerysInnerJoinDataSet1();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.carrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carrosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.carrosTableAdapter = new DataGridView.QuerysInnerJoinDataSet1TableAdapters.CarrosTableAdapter();
-            this.querysInnerJoinDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.deleteCommand = new System.Windows.Forms.DataGridViewButtonColumn();
             this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +43,17 @@
             this.datIncDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.datAltDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deleteCommandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carrosBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.querysInnerJoinDataSet1 = new DataGridView.QuerysInnerJoinDataSet1();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.carrosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.carrosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.carrosTableAdapter = new DataGridView.QuerysInnerJoinDataSet1TableAdapters.CarrosTableAdapter();
+            this.querysInnerJoinDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carrosBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.querysInnerJoinDataSet1)).BeginInit();
@@ -91,79 +91,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(665, 398);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // carrosBindingSource2
-            // 
-            this.carrosBindingSource2.DataMember = "Carros";
-            this.carrosBindingSource2.DataSource = this.querysInnerJoinDataSet1;
-            // 
-            // querysInnerJoinDataSet1
-            // 
-            this.querysInnerJoinDataSet1.DataSetName = "QuerysInnerJoinDataSet1";
-            this.querysInnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // button1
-            // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(12, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 35);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(182, 11);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(158, 35);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(495, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(170, 35);
-            this.button3.TabIndex = 3;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.Button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(346, 11);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(143, 36);
-            this.button4.TabIndex = 4;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.Button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(671, 77);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(128, 36);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Lixeira";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.Button5_Click);
-            // 
-            // carrosBindingSource1
-            // 
-            this.carrosBindingSource1.DataMember = "Carros";
-            this.carrosBindingSource1.DataSource = this.querysInnerJoinDataSet1;
-            // 
-            // carrosTableAdapter
-            // 
-            this.carrosTableAdapter.ClearBeforeFill = true;
-            // 
-            // querysInnerJoinDataSet1BindingSource
-            // 
-            this.querysInnerJoinDataSet1BindingSource.DataSource = this.querysInnerJoinDataSet1;
-            this.querysInnerJoinDataSet1BindingSource.Position = 0;
             // 
             // deleteCommand
             // 
@@ -276,6 +203,80 @@
             this.deleteCommandDataGridViewTextBoxColumn.ReadOnly = true;
             this.deleteCommandDataGridViewTextBoxColumn.Width = 125;
             // 
+            // carrosBindingSource2
+            // 
+            this.carrosBindingSource2.DataMember = "Carros";
+            this.carrosBindingSource2.DataSource = this.querysInnerJoinDataSet1;
+            // 
+            // querysInnerJoinDataSet1
+            // 
+            this.querysInnerJoinDataSet1.DataSetName = "QuerysInnerJoinDataSet1";
+            this.querysInnerJoinDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // button2
+            // 
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(211, 11);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(158, 35);
+            this.button2.TabIndex = 2;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Location = new System.Drawing.Point(524, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(170, 35);
+            this.button3.TabIndex = 3;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(375, 12);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(143, 36);
+            this.button4.TabIndex = 4;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(671, 77);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(128, 36);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "Lixeira";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
+            // 
+            // button1
+            // 
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(12, 11);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(193, 35);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // carrosBindingSource1
+            // 
+            this.carrosBindingSource1.DataMember = "Carros";
+            this.carrosBindingSource1.DataSource = this.querysInnerJoinDataSet1;
+            // 
+            // carrosTableAdapter
+            // 
+            this.carrosTableAdapter.ClearBeforeFill = true;
+            // 
+            // querysInnerJoinDataSet1BindingSource
+            // 
+            this.querysInnerJoinDataSet1BindingSource.DataSource = this.querysInnerJoinDataSet1;
+            this.querysInnerJoinDataSet1BindingSource.Position = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -305,7 +306,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource carrosBindingSource;
         private QuerysInnerJoinDataSet1TableAdapters.CarrosTableAdapter carrosTableAdapter;
         private System.Windows.Forms.BindingSource carrosBindingSource1;
@@ -328,6 +328,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn datIncDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn datAltDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn deleteCommandDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button1;
     }
 }
 

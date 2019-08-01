@@ -32,13 +32,14 @@ namespace DataGridView
         }
         private void Button3_Click(object sender, EventArgs e)
         {
-            Form3 frmUsuarios = new Form3();
-            frmUsuarios.ShowDialog();
+            Form4 frmVendas = new Form4();
+            frmVendas.ShowDialog();
         }
         private void Button4_Click(object sender, EventArgs e)
         {
-            Form4 frmVendas = new Form4();
-            frmVendas.ShowDialog();
+
+            Form3 frmUsuarios = new Form3();
+            frmUsuarios.ShowDialog();
         }
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -50,21 +51,39 @@ namespace DataGridView
                 case 0:
                     {
                         this.carrosTableAdapter.DeleteQuery(carSelect.Id);
-                    }break;
-                case 1: {
+                    }
+                    break;
+                case 1:
+                    {
                         frmEdicaoCarros editCarro = new frmEdicaoCarros();
                         editCarro.CarrosRow = carSelect;
                         editCarro.ShowDialog();
-                        this.carrosTableAdapter.Update(editCarro.CarrosRow) ;
+                        this.carrosTableAdapter.Update(editCarro.CarrosRow);
 
                     }
                     break;
             }
+            this.carrosTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Carros);
         }
         private void Button5_Click(object sender, EventArgs e)
         {
             Lixeira lixo = new Lixeira();
             lixo.ShowDialog();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionar formAdd = new frmAdicionar();
+            formAdd.ShowDialog();
+            this.carrosTableAdapter.Insert(
+                formAdd.CarrosRow.Modelo,
+                formAdd.CarrosRow.Ano,
+                formAdd.CarrosRow.Marca,
+                true, 1, 1, DateTime.Now, DateTime.Now
+                );
+            this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet1.Carros);
+
+
         }
     }
 }

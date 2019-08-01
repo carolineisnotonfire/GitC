@@ -118,6 +118,7 @@
             this.editar.ReadOnly = true;
             this.editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.editar.Text = "Editar";
             this.editar.UseColumnTextForButtonValue = true;
             this.editar.Width = 125;
             // 
