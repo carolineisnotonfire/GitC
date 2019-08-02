@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataGridView.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,8 @@ namespace DataGridView
         {
             InitializeComponent();
         }
+        public Carro CarroRow;
+
         public DataGridView.QuerysInnerJoinDataSet1.CarrosRow CarrosRow;
         private void Adicionar_Load(object sender, EventArgs e)
         {
@@ -26,9 +29,13 @@ namespace DataGridView
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            CarrosRow.Modelo = textBox1.Text;
-            CarrosRow.Ano = dateTimePicker1.Value;
-            CarrosRow.Marca = (int)comboBox1.SelectedValue;
+            CarroRow = new Carro
+            {
+                Modelo = textBox1.Text,
+                Ano = dateTimePicker1.Value,
+                Marca = (int)comboBox1.SelectedValue
+
+            };
             this.Close();
         }
     }
