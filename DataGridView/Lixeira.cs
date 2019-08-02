@@ -27,8 +27,10 @@ namespace DataGridView
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var lixSelect = ((System.Data.DataRowView)this.dataGridView1.Rows
+        { 
+           
+           
+           var lixSelect = ((System.Data.DataRowView)this.dataGridView1.Rows
             [e.RowIndex]
             .DataBoundItem).Row as DataGridView.QuerysInnerJoinDataSet1.CarrosRow;
             switch (e.ColumnIndex)

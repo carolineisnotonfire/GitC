@@ -33,9 +33,12 @@ namespace DataGridView
              .DataBoundItem).Row as DataGridView.QuerysInnerJoinDataSet1.MarcasRow;
             switch (e.ColumnIndex)
             {
+
                 case 0:
                     {
                         this.marcasTableAdapter.DeleteQuery(marSelect.Id);
+                        this.marcasTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Marcas);
+
 
                     }
                     break;
@@ -46,6 +49,8 @@ namespace DataGridView
                         editMarca.MarcasRow = marSelect;
                         editMarca.ShowDialog();
                         this.marcasTableAdapter.Update(editMarca.MarcasRow);
+                        this.marcasTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Marcas);
+
                     }
                     break;
 
@@ -63,7 +68,7 @@ namespace DataGridView
                 formAddMarc.marcasRow.Nome,
                 true, 1, 1, DateTime.Now, DateTime.Now
                 );
-                this.marcasTableAdapter.Fill(this.querysInnerJoinDataSet1.Marcas);
+            this.marcasTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Marcas);
         }
     }
 }
