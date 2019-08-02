@@ -98,6 +98,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Wheat;
             this.ClientSize = new System.Drawing.Size(414, 244);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox3);
@@ -107,7 +108,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmEdicaoVendas";
-            this.Text = "frmEdicaoVendas";
+            this.Text = "Editar venda";
             this.ResumeLayout(false);
             this.PerformLayout();
 

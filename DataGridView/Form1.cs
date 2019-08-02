@@ -75,12 +75,14 @@ namespace DataGridView
         {
            Adicionar formAdd = new Adicionar();
            formAdd.ShowDialog();
-           this.carrosTableAdapter.Insert(
-               formAdd.CarroRow.Modelo,
-               formAdd.CarroRow.Ano,
-               formAdd.CarroRow.Marca,
-               true, 1, 1, DateTime.Now, DateTime.Now
-               );
+            if (string.IsNullOrEmpty(formAdd.CarroRow?.Modelo) &&
+                formAdd.CarroRow?.Marca > 0)
+                this.carrosTableAdapter.Insert(
+                    formAdd.CarroRow.Modelo,
+                    formAdd.CarroRow.Ano,
+                    formAdd.CarroRow.Marca,
+                    true, 1, 1, DateTime.Now, DateTime.Now
+                    );
             this.carrosTableAdapter.Fill(this.querysInnerJoinDataSet1.Carros);
 
 

@@ -1,6 +1,6 @@
-﻿namespace DataGridView.Edicao
+﻿namespace DataGridView.Adicao
 {
-    partial class frmEdicaoUsuarios
+    partial class frmAdicionarUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -35,31 +35,31 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(134, 156);
+            this.button1.Location = new System.Drawing.Point(156, 145);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(115, 47);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Salvar";
+            this.button1.Text = "Adicionar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 45);
+            this.label1.Location = new System.Drawing.Point(12, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 17);
+            this.label1.Size = new System.Drawing.Size(96, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Nome do usuário:";
+            this.label1.Text = "Novo usuário:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(138, 45);
+            this.textBox1.Location = new System.Drawing.Point(114, 51);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(264, 22);
+            this.textBox1.Size = new System.Drawing.Size(288, 22);
             this.textBox1.TabIndex = 2;
             // 
-            // frmEdicaoUsuarios
+            // frmAdicionarUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -68,9 +68,9 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
-            this.Name = "frmEdicaoUsuarios";
-            this.Text = "Editar usuário";
-            this.Load += new System.EventHandler(this.FrmEdicaoUsuarios_Load);
+            this.Name = "frmAdicionarUsuarios";
+            this.Text = "Adicionar usuário";
+            this.Load += new System.EventHandler(this.FrmAdicionarUsuarios_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
