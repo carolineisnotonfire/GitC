@@ -29,7 +29,7 @@ namespace MVCProject.View
             autorRow = new Autor
             {
                 Nome = textBox1.Text,
-                Descricao = Convert.ToString(richTextBox1)
+                Descricao = richTextBox1.Text
             };
             this.Close();
         }

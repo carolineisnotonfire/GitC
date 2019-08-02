@@ -26,7 +26,15 @@ namespace MVCProject.View
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            frmAdicionarAutores formAddAut = new frmAdicionarAutores();
+            formAddAut.ShowDialog();
+            if (!string.IsNullOrEmpty(formAddAut.autorRow?.Nome))
 
+                this.autoresTableAdapter.Insert(
+                formAddAut.autorRow.Nome,
+                formAddAut.autorRow.Descricao
+                );
+            this.autoresTableAdapter.Fill(this.sistemaBibliotecaDataSet.Autores);
         }
     }
 }
