@@ -23,5 +23,18 @@ namespace MVCProject.View
             this.editoraTableAdapter.Fill(this.sistemaBibliotecaDataSet.Editora);
 
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarEditora formAddEdi = new frmAdicionarEditora();
+            formAddEdi.ShowDialog();
+            if (!string.IsNullOrEmpty(formAddEdi.editoraRow?.Nome))
+
+                this.editoraTableAdapter.Insert(
+                formAddEdi.editoraRow.Nome,
+                formAddEdi.editoraRow.Descricao
+                );
+            this.editoraTableAdapter.Fill(this.sistemaBibliotecaDataSet.Editora);
+        }
     }
 }

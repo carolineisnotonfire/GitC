@@ -19,9 +19,22 @@ namespace MVCProject.View
 
         private void FrmGeneros_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet.Genero' table. You can move, or remove it, as needed.
-            this.generoTableAdapter.Fill(this.sistemaBibliotecaDataSet.Genero);
+            // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet.Generos' table. You can move, or remove it, as needed.
+            this.generosTableAdapter.Fill(this.sistemaBibliotecaDataSet.Generos);
 
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarGeneros formAddGen = new frmAdicionarGeneros();
+            formAddGen.ShowDialog();
+            if (!string.IsNullOrEmpty(formAddGen.generoRow?.Tipo))
+
+                this.generosTableAdapter.InsertQuery(
+                formAddGen.generoRow.Tipo,
+                formAddGen.generoRow.Descricao
+                );
+            this.generosTableAdapter.Fill(this.sistemaBibliotecaDataSet.Generos);
         }
     }
 }

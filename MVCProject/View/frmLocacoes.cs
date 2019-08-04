@@ -23,5 +23,21 @@ namespace MVCProject.View
             this.locacaoTableAdapter.Fill(this.sistemaBibliotecaDataSet.Locacao);
 
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarLocacoes formAddLoc = new frmAdicionarLocacoes();
+            formAddLoc.ShowDialog();
+            if (formAddLoc.locacaoRow?.Livro > 0)
+
+                this.locacaoTableAdapter.Insert(
+                formAddLoc.locacaoRow.Livro,
+                formAddLoc.locacaoRow.Usuario,
+                formAddLoc.locacaoRow.Tipo,
+                formAddLoc.locacaoRow.Devolucao,
+                true, 1, 1, DateTime.Now, DateTime.Now
+                ) ;
+            this.locacaoTableAdapter.Fill(this.sistemaBibliotecaDataSet.Locacao);
+        }
     }
 }

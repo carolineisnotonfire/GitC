@@ -25,5 +25,22 @@ namespace MVCProject.View
             this.usuarioTableAdapter.Fill(this.sistemaBibliotecaDataSet.Usuario);
 
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarUsuarios formAddUsu = new frmAdicionarUsuarios();
+            formAddUsu.ShowDialog();
+            if (!string.IsNullOrEmpty(formAddUsu.usuarioRow?.Nome))
+
+                this.usuarioTableAdapter.Insert(
+                formAddUsu.usuarioRow.Nome,
+                formAddUsu.usuarioRow.Login,
+                formAddUsu.usuarioRow.Senha,
+                formAddUsu.usuarioRow.Email,
+                true, 1, 1, DateTime.Now, DateTime.Now
+
+                );
+            this.usuarioTableAdapter.Fill(this.sistemaBibliotecaDataSet.Usuario);
+        }
     }
 }

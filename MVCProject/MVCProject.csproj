@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,6 +76,36 @@
     </Compile>
     <Compile Include="View\frmAdicionarAutores.Designer.cs">
       <DependentUpon>frmAdicionarAutores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmAdicionarEditora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmAdicionarEditora.Designer.cs">
+      <DependentUpon>frmAdicionarEditora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmAdicionarGeneros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmAdicionarGeneros.Designer.cs">
+      <DependentUpon>frmAdicionarGeneros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmAdicionarLivros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmAdicionarLivros.Designer.cs">
+      <DependentUpon>frmAdicionarLivros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmAdicionarLocacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmAdicionarLocacoes.Designer.cs">
+      <DependentUpon>frmAdicionarLocacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmAdicionarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmAdicionarUsuarios.Designer.cs">
+      <DependentUpon>frmAdicionarUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="View\frmAutores.cs">
       <SubType>Form</SubType>
@@ -132,6 +163,21 @@
     </Compile>
     <EmbeddedResource Include="View\frmAdicionarAutores.resx">
       <DependentUpon>frmAdicionarAutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmAdicionarEditora.resx">
+      <DependentUpon>frmAdicionarEditora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmAdicionarGeneros.resx">
+      <DependentUpon>frmAdicionarGeneros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmAdicionarLivros.resx">
+      <DependentUpon>frmAdicionarLivros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmAdicionarLocacoes.resx">
+      <DependentUpon>frmAdicionarLocacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmAdicionarUsuarios.resx">
+      <DependentUpon>frmAdicionarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmAutores.resx">
       <DependentUpon>frmAutores.cs</DependentUpon>

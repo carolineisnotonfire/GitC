@@ -23,5 +23,25 @@ namespace MVCProject.View
             this.livrosTableAdapter.Fill(this.sistemaBibliotecaDataSet.Livros);
 
         }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            frmAdicionarLivros formAddLiv = new frmAdicionarLivros();
+            formAddLiv.ShowDialog();
+            if (!string.IsNullOrEmpty(formAddLiv.livroRow?.Titulo))
+
+                this.livrosTableAdapter.Insert(
+                formAddLiv.livroRow.Registro,
+                formAddLiv.livroRow.Titulo,
+                formAddLiv.livroRow.Isbn,
+                formAddLiv.livroRow.Genero,
+                formAddLiv.livroRow.Editora,
+                formAddLiv.livroRow.Sinopse,
+                formAddLiv.livroRow.Observacoes,
+                true, 1, 1, DateTime.Now, DateTime.Now
+
+                );
+            this.livrosTableAdapter.Fill(this.sistemaBibliotecaDataSet.Livros);
+        }
     }
 }

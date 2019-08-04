@@ -6,3 +6,10 @@
     {
     }
 }
+
+namespace MVCProject.SistemaBibliotecaDataSetTableAdapters {
+    
+    
+    public partial class GenerosTableAdapter {
+    }
+}
