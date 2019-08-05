@@ -27,6 +27,8 @@ namespace MVCProject
 
             if (result != null)
             {
+                Session.user = new Usuario();
+                Session.user.Id = (int)result;
 
                 frmPrincipal frmprin = new frmPrincipal();
                 frmprin.ShowDialog();
@@ -34,7 +36,9 @@ namespace MVCProject
             }
             else
             {
-                MessageBox.Show("Login inválido!");
+                //MessageBox.Show("Login inválido!");
+                throw new Exception("hehe!");
+
             }
         }
 

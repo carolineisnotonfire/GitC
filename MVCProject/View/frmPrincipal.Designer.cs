@@ -66,42 +66,42 @@
             // usuáriosToolStripMenuItem
             // 
             this.usuáriosToolStripMenuItem.Name = "usuáriosToolStripMenuItem";
-            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.usuáriosToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
             this.usuáriosToolStripMenuItem.Text = "Usuários";
             this.usuáriosToolStripMenuItem.Click += new System.EventHandler(this.UsuáriosToolStripMenuItem_Click);
             // 
             // autoresToolStripMenuItem
             // 
             this.autoresToolStripMenuItem.Name = "autoresToolStripMenuItem";
-            this.autoresToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.autoresToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
             this.autoresToolStripMenuItem.Text = "Autores";
             this.autoresToolStripMenuItem.Click += new System.EventHandler(this.AutoresToolStripMenuItem_Click);
             // 
             // gênerosToolStripMenuItem
             // 
             this.gênerosToolStripMenuItem.Name = "gênerosToolStripMenuItem";
-            this.gênerosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.gênerosToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
             this.gênerosToolStripMenuItem.Text = "Gêneros";
             this.gênerosToolStripMenuItem.Click += new System.EventHandler(this.GênerosToolStripMenuItem_Click);
             // 
             // livrosToolStripMenuItem
             // 
             this.livrosToolStripMenuItem.Name = "livrosToolStripMenuItem";
-            this.livrosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.livrosToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
             this.livrosToolStripMenuItem.Text = "Livros";
             this.livrosToolStripMenuItem.Click += new System.EventHandler(this.LivrosToolStripMenuItem_Click);
             // 
             // locaçõesToolStripMenuItem
             // 
             this.locaçõesToolStripMenuItem.Name = "locaçõesToolStripMenuItem";
-            this.locaçõesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.locaçõesToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
             this.locaçõesToolStripMenuItem.Text = "Locações";
             this.locaçõesToolStripMenuItem.Click += new System.EventHandler(this.LocaçõesToolStripMenuItem_Click);
             // 
             // editorasToolStripMenuItem
             // 
             this.editorasToolStripMenuItem.Name = "editorasToolStripMenuItem";
-            this.editorasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.editorasToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
             this.editorasToolStripMenuItem.Text = "Editoras";
             this.editorasToolStripMenuItem.Click += new System.EventHandler(this.EditorasToolStripMenuItem_Click);
             // 
@@ -114,6 +114,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
             this.Text = "Libby - Tela Inicial";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
