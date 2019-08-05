@@ -44,11 +44,11 @@ namespace MVCProject.View
             .DataBoundItem).Row as MVCProject.SistemaBibliotecaDataSet.AutoresRow;
             switch (e.ColumnIndex)
             {
-                case 2:
-                    {
-                        this.autoresTableAdapter.DeleteQuery(autSelect.Id);
-                    }
-                    break;
+                //case 2:
+                //    {
+                //        this.autoresTableAdapter.Delete(autSelect.Id);
+                //    }
+                   // break;
                 case 1:
                    {
                        frmEditarAutores editAut = new frmEditarAutores();

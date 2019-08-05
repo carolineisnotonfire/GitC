@@ -29,12 +29,13 @@ namespace MVCProject.View
             frmAdicionarGeneros formAddGen = new frmAdicionarGeneros();
             formAddGen.ShowDialog();
             if (!string.IsNullOrEmpty(formAddGen.generoRow?.Tipo))
-
+            {
                 this.generosTableAdapter.InsertQuery(
                 formAddGen.generoRow.Tipo,
                 formAddGen.generoRow.Descricao
                 );
-            this.generosTableAdapter.Fill(this.sistemaBibliotecaDataSet.Generos);
+                this.generosTableAdapter.Fill(this.sistemaBibliotecaDataSet.Generos);
+            }
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -56,6 +57,7 @@ namespace MVCProject.View
                         editGen.GenerosRow = genSelect;
                         editGen.ShowDialog();
                         this.generosTableAdapter.Update(editGen.GenerosRow);
+
 
                     }
                     break;
