@@ -17,18 +17,24 @@ namespace MVCProject
         public Form1()
         {
             InitializeComponent();
-            textBox2.Text = "";
-            textBox2.PasswordChar = '*';
-            textBox2.MaxLength = 14;
+
 
         }
+        public Usuario UsuarioRow;
         private void Button1_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(textBox1.Text))
+            var result = this.usuarioTableAdapter1.LoginQuery(textBox1.Text, textBox2.Text);
+
+            if (result != null)
             {
+
                 frmPrincipal frmprin = new frmPrincipal();
                 frmprin.ShowDialog();
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Login inválido!");
             }
         }
 

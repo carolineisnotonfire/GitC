@@ -33,6 +33,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.usuarioTableAdapter1 = new MVCProject.SistemaBibliotecaDataSetTableAdapters.UsuarioTableAdapter();
             this.SuspendLayout();
             // 
             // button1
@@ -74,8 +75,14 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(107, 254);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(214, 22);
             this.textBox2.TabIndex = 4;
+            this.textBox2.UseSystemPasswordChar = true;
+            // 
+            // usuarioTableAdapter1
+            // 
+            this.usuarioTableAdapter1.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -102,6 +109,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private SistemaBibliotecaDataSetTableAdapters.UsuarioTableAdapter usuarioTableAdapter1;
     }
 }
 
