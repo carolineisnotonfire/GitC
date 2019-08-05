@@ -29,7 +29,7 @@ namespace MVCProject.View
         {
             GenerosRow.Descricao = richTextBox1.Text;
             GenerosRow.Tipo = textBox1.Text;
-            this.Close();
+           
         }
     }
 }

@@ -5271,10 +5271,10 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[Editora] ([Nome], [Descricao]) VALUES (@Nome, @Descricao);\r\nSE" +
-                "LECT Id, Nome, Descricao FROM Editora WHERE (Id = SCOPE_IDENTITY())";
+            this._commandCollection[2].CommandText = "INSERT INTO [dbo].[Generos] ([Tipo], [Descricao]) VALUES (@Tipo, @Descricao);\r\nSE" +
+                "LECT Id, Tipo, Descricao FROM Generos WHERE (Id = SCOPE_IDENTITY())";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nome", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Nome", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tipo", global::System.Data.SqlDbType.VarChar, 200, global::System.Data.ParameterDirection.Input, 0, 0, "Tipo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descricao", global::System.Data.SqlDbType.VarChar, 1000, global::System.Data.ParameterDirection.Input, 0, 0, "Descricao", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -5359,16 +5359,16 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQuery(string Nome, string Descricao) {
+        public virtual int InsertQuery(string Tipo, string Descricao) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            if ((Nome == null)) {
-                command.Parameters[0].Value = global::System.DBNull.Value;
+            if ((Tipo == null)) {
+                throw new global::System.ArgumentNullException("Tipo");
             }
             else {
-                command.Parameters[0].Value = ((string)(Nome));
+                command.Parameters[0].Value = ((string)(Tipo));
             }
             if ((Descricao == null)) {
-                throw new global::System.ArgumentNullException("Descricao");
+                command.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 command.Parameters[1].Value = ((string)(Descricao));

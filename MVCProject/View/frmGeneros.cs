@@ -19,8 +19,7 @@ namespace MVCProject.View
 
         private void FrmGeneros_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet.Generos' table. You can move, or remove it, as needed.
-            this.generosTableAdapter.Fill(this.sistemaBibliotecaDataSet.Generos);
+        
 
         }
 
@@ -30,7 +29,7 @@ namespace MVCProject.View
             formAddGen.ShowDialog();
             if (!string.IsNullOrEmpty(formAddGen.generoRow?.Tipo))
             {
-                this.generosTableAdapter.InsertQuery(
+               this.generosTableAdapter.InsertQuery(
                 formAddGen.generoRow.Tipo,
                 formAddGen.generoRow.Descricao
                 );
@@ -38,31 +37,35 @@ namespace MVCProject.View
             }
         }
 
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       
+        
+
+        private void DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            var genSelect = ((System.Data.DataRowView)this.dataGridView1.Rows
-            [e.RowIndex]
-            .DataBoundItem).Row as MVCProject.SistemaBibliotecaDataSet.GenerosRow;
-            switch (e.ColumnIndex)
-            {
-                case 1:
-                    {
-                        this.generosTableAdapter.DeleteQuery(genSelect.Id);
+            
+                var genSelect = ((System.Data.DataRowView)this.dataGridView1.Rows
+                [e.RowIndex]
+                .DataBoundItem).Row as MVCProject.SistemaBibliotecaDataSet.GenerosRow;
+                switch (e.ColumnIndex)
+                {
+                    case 1:
+                        {
+                            this.generosTableAdapter.DeleteQuery(genSelect.Id);
 
-                    }
-                    break;
-                case 2:
-                    {
-                        frmEditarGeneros editGen = new frmEditarGeneros();
-                        editGen.GenerosRow = genSelect;
-                        editGen.ShowDialog();
-                        this.generosTableAdapter.Update(editGen.GenerosRow);
+                        }
+                        break;
+                    case 2:
+                        {
+                            frmEditarGeneros editGen = new frmEditarGeneros();
+                            editGen.GenerosRow = genSelect;
+                            editGen.ShowDialog();
+                            this.generosTableAdapter.Update(editGen.GenerosRow);
 
 
-                    }
-                    break;
+                        }
+                        break;
+                }
+                this.generosTableAdapter.Fill(this.sistemaBibliotecaDataSet.Generos);
             }
-            this.generosTableAdapter.Fill(this.sistemaBibliotecaDataSet.Generos);
-        }
     }
 }

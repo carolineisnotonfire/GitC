@@ -17,8 +17,9 @@ namespace MVCProject.View
         {
             InitializeComponent();
         }
+
         public Genero generoRow;
-        public MVCProject.SistemaBibliotecaDataSet.GenerosRow GenerosRow;
+       
         private void Button1_Click(object sender, EventArgs e)
         {
             generoRow = new Genero
