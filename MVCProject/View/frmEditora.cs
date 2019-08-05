@@ -46,12 +46,6 @@ namespace MVCProject.View
             {
                 case 1:
                     {
-                        this.editoraTableAdapter.DeleteQuery(ediSelect.Id);
-
-                    }
-                    break;
-                case 2:
-                    {
                         frmEditarEditoras editEdi = new frmEditarEditoras();
                         editEdi.EditoraRow = ediSelect;
                         editEdi.ShowDialog();
