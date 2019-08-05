@@ -17,13 +17,20 @@ namespace MVCProject
         public Form1()
         {
             InitializeComponent();
-            
-        }
 
+        }
         private void Button1_Click(object sender, EventArgs e)
         {
             frmPrincipal frmprin = new frmPrincipal();
             frmprin.ShowDialog();
+
+            this.Close();
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

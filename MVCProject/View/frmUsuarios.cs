@@ -53,7 +53,7 @@ namespace MVCProject.View
 
                     }
                     break;
-                case 2:
+                case 0:
                     {
                         frmEditarUsuarios editUsu = new frmEditarUsuarios();
                         editUsu.UsuarioRow = usuSelect;

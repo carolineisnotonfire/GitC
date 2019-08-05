@@ -30,5 +30,8 @@ namespace MVCProject.View
             AutoresRow.Nome = textBox1.Text;
             this.Close();
         }
+        //INSERT INTO[dbo].[Livros] SET[Registro] = @Registro, [Titulo] = @Titulo, [Isbn] = @Isbn, [Genero] = @Genero, [Editora] = @Editora, [Sinopse] = @Sinopse, [Observacoes] = @Observacoes,  [UsuAlt] = @UsuAlt,  [DatAlt] = @DatAlt FROM Livros WHERE(Id = @Id)
+
+
     }
 }

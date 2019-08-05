@@ -30,5 +30,10 @@ namespace MVCProject.View
             };
             this.Close();
         }
+
+        private void FrmAdicionarGeneros_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
