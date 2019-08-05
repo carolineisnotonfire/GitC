@@ -251,7 +251,16 @@ SELECT Id, Tipo, Descricao FROM Generos WHERE (Id = SCOPE_IDENTITY())</CommandTe
               <Mapping SourceColumn="Livro" DataSetColumn="Livro" />
               <Mapping SourceColumn="Autor" DataSetColumn="Autor" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="SistemaBibliotecaConnectionString (Settings)" DbObjectName="SistemaBiblioteca.dbo.LivroAutor" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select Livro, Autor from dbo.LivroAutor</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LivrosTableAdapter" GeneratorDataComponentClassName="LivrosTableAdapter" Name="Livros" UserDataComponentName="LivrosTableAdapter">
             <MainSource>
@@ -298,7 +307,7 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Livros</CommandText>
+                    <CommandText>SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Livros where Ativo = 1</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -358,9 +367,7 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
               <DbSource ConnectionRef="SistemaBibliotecaConnectionString (Settings)" DbObjectName="SistemaBiblioteca.dbo.Livros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomQuery" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="CustomQuery" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="CustomQuery">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>
-
-SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Livros WHERE (Ativo = 1)</CommandText>
+                    <CommandText>SELECT Ativo, DatAlt, DatInc, Editora, Genero, Id, Isbn, Observacoes, Registro, Sinopse, Titulo, UsuAlt, UsuInc FROM Livros WHERE (Ativo = 1)</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>

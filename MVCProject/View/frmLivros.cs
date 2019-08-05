@@ -19,6 +19,8 @@ namespace MVCProject.View
 
         private void FrmLivros_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet.Autores' table. You can move, or remove it, as needed.
+            this.autoresTableAdapter.Fill(this.sistemaBibliotecaDataSet.Autores);
             // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet.Livros' table. You can move, or remove it, as needed.
             this.livrosTableAdapter.CustomQuery(this.sistemaBibliotecaDataSet.Livros);
 
@@ -68,6 +70,11 @@ namespace MVCProject.View
                         break;
             }
             this.livrosTableAdapter.CustomQuery(this.sistemaBibliotecaDataSet.Livros);
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //this.autoresTableAdapter.Fill(this.sistemaBibliotecaDataSet.Autores);
         }
     }
 }

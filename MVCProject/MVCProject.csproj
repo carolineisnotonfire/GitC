@@ -162,6 +162,12 @@
     <Compile Include="View\frmGeneros.Designer.cs">
       <DependentUpon>frmGeneros.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmLivroAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLivroAutor.Designer.cs">
+      <DependentUpon>frmLivroAutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmLivros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +248,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmGeneros.resx">
       <DependentUpon>frmGeneros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLivroAutor.resx">
+      <DependentUpon>frmLivroAutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmLivros.resx">
       <DependentUpon>frmLivros.cs</DependentUpon>
