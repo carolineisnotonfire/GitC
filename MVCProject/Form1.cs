@@ -17,19 +17,23 @@ namespace MVCProject
         public Form1()
         {
             InitializeComponent();
+            textBox2.Text = "";
+            textBox2.PasswordChar = '*';
+            textBox2.MaxLength = 14;
 
         }
         private void Button1_Click(object sender, EventArgs e)
         {
-            frmPrincipal frmprin = new frmPrincipal();
-            frmprin.ShowDialog();
-
-            this.Close();
-
+            if (!string.IsNullOrEmpty(textBox1.Text))
+            {
+                frmPrincipal frmprin = new frmPrincipal();
+                frmprin.ShowDialog();
+                this.Close();
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
+        {   
 
         }
     }
