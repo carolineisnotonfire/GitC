@@ -36,5 +36,31 @@ namespace MVCProject.View
                 );
             this.generosTableAdapter.Fill(this.sistemaBibliotecaDataSet.Generos);
         }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var genSelect = ((System.Data.DataRowView)this.dataGridView1.Rows
+            [e.RowIndex]
+            .DataBoundItem).Row as MVCProject.SistemaBibliotecaDataSet.GenerosRow;
+            switch (e.ColumnIndex)
+            {
+                case 1:
+                    {
+                        this.generosTableAdapter.DeleteQuery(genSelect.Id);
+
+                    }
+                    break;
+                case 2:
+                    {
+                        frmEditarGeneros editGen = new frmEditarGeneros();
+                        editGen.GenerosRow = genSelect;
+                        editGen.ShowDialog();
+                        this.generosTableAdapter.Update(editGen.GenerosRow);
+
+                    }
+                    break;
+            }
+            this.generosTableAdapter.Fill(this.sistemaBibliotecaDataSet.Generos);
+        }
     }
 }

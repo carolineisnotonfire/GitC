@@ -36,5 +36,31 @@ namespace MVCProject.View
                 );
             this.editoraTableAdapter.Fill(this.sistemaBibliotecaDataSet.Editora);
         }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var ediSelect = ((System.Data.DataRowView)this.dataGridView1.Rows
+            [e.RowIndex]
+            .DataBoundItem).Row as MVCProject.SistemaBibliotecaDataSet.EditoraRow;
+            switch (e.ColumnIndex)
+            {
+                case 1:
+                    {
+                        this.editoraTableAdapter.DeleteQuery(ediSelect.Id);
+
+                    }
+                    break;
+                case 2:
+                    {
+                        frmEditarEditoras editEdi = new frmEditarEditoras();
+                        editEdi.EditoraRow = ediSelect;
+                        editEdi.ShowDialog();
+                        this.editoraTableAdapter.Update(editEdi.EditoraRow);
+
+                    }
+                    break;
+            }
+            this.editoraTableAdapter.Fill(this.sistemaBibliotecaDataSet.Editora);
+        }
     }
 }

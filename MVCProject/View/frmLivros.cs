@@ -20,7 +20,7 @@ namespace MVCProject.View
         private void FrmLivros_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet.Livros' table. You can move, or remove it, as needed.
-            this.livrosTableAdapter.Fill(this.sistemaBibliotecaDataSet.Livros);
+            this.livrosTableAdapter.CustomQuery(this.sistemaBibliotecaDataSet.Livros);
 
         }
 
@@ -41,7 +41,33 @@ namespace MVCProject.View
                 true, 1, 1, DateTime.Now, DateTime.Now
 
                 );
-            this.livrosTableAdapter.Fill(this.sistemaBibliotecaDataSet.Livros);
+            this.livrosTableAdapter.CustomQuery(this.sistemaBibliotecaDataSet.Livros);
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var livSelect = ((System.Data.DataRowView)this.dataGridView1.Rows
+            [e.RowIndex]
+            .DataBoundItem).Row as MVCProject.SistemaBibliotecaDataSet.LivrosRow;
+            switch (e.ColumnIndex)
+            {
+                case 1:
+                    {
+                        this.livrosTableAdapter.DeleteQuery(livSelect.Id);
+
+                    }
+                    break;
+                    case 2:
+                        {
+                            frmEditarLivros editLic = new frmEditarLivros();
+                        editLic.LivrosRow = livSelect;
+                        editLic.ShowDialog();
+                            this.livrosTableAdapter.Update(editLic.LivrosRow);
+                    
+                        }
+                        break;
+            }
+            this.livrosTableAdapter.CustomQuery(this.sistemaBibliotecaDataSet.Livros);
         }
     }
 }

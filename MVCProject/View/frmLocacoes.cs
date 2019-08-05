@@ -20,7 +20,7 @@ namespace MVCProject.View
         private void FrmLocacoes_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet.Locacao' table. You can move, or remove it, as needed.
-            this.locacaoTableAdapter.Fill(this.sistemaBibliotecaDataSet.Locacao);
+            this.locacaoTableAdapter.CustomQuery(this.sistemaBibliotecaDataSet.Locacao);
 
         }
 
@@ -37,7 +37,33 @@ namespace MVCProject.View
                 formAddLoc.locacaoRow.Devolucao,
                 true, 1, 1, DateTime.Now, DateTime.Now
                 ) ;
-            this.locacaoTableAdapter.Fill(this.sistemaBibliotecaDataSet.Locacao);
+            this.locacaoTableAdapter.CustomQuery(this.sistemaBibliotecaDataSet.Locacao);
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var locSelect = ((System.Data.DataRowView)this.dataGridView1.Rows
+            [e.RowIndex]
+            .DataBoundItem).Row as MVCProject.SistemaBibliotecaDataSet.LocacaoRow;
+            switch (e.ColumnIndex)
+            {
+                case 1:
+                    {
+                        this.locacaoTableAdapter.DeleteQuery(locSelect.Id);
+
+                    }
+                    break;
+                    case 2:
+                        {
+                            frmEditarLocacao editCarro = new frmEditarLocacao();
+                            editCarro.LocacaoRow = locSelect;
+                            editCarro.ShowDialog();
+                            this.locacaoTableAdapter.Update(editCarro.LocacaoRow);
+                    
+                        }
+                        break;
+            }
+            this.locacaoTableAdapter.CustomQuery(this.sistemaBibliotecaDataSet.Locacao);
         }
     }
 }

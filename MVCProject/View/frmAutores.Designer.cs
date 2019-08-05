@@ -31,15 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.autoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sistemaBibliotecaDataSet = new MVCProject.SistemaBibliotecaDataSet();
-            this.autoresTableAdapter = new MVCProject.SistemaBibliotecaDataSetTableAdapters.AutoresTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Deletar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.deleteColumnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sistemaBibliotecaDataSet = new MVCProject.SistemaBibliotecaDataSet();
+            this.autoresTableAdapter = new MVCProject.SistemaBibliotecaDataSetTableAdapters.AutoresTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.autoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sistemaBibliotecaDataSet)).BeginInit();
@@ -48,7 +48,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(597, 36);
             this.button1.TabIndex = 0;
@@ -71,27 +71,14 @@
             this.deleteColumnDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.autoresBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(0, 41);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(597, 332);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // autoresBindingSource
-            // 
-            this.autoresBindingSource.DataMember = "Autores";
-            this.autoresBindingSource.DataSource = this.sistemaBibliotecaDataSet;
-            // 
-            // sistemaBibliotecaDataSet
-            // 
-            this.sistemaBibliotecaDataSet.DataSetName = "SistemaBibliotecaDataSet";
-            this.sistemaBibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // autoresTableAdapter
-            // 
-            this.autoresTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -149,6 +136,20 @@
             this.deleteColumnDataGridViewTextBoxColumn.ReadOnly = true;
             this.deleteColumnDataGridViewTextBoxColumn.Width = 125;
             // 
+            // autoresBindingSource
+            // 
+            this.autoresBindingSource.DataMember = "Autores";
+            this.autoresBindingSource.DataSource = this.sistemaBibliotecaDataSet;
+            // 
+            // sistemaBibliotecaDataSet
+            // 
+            this.sistemaBibliotecaDataSet.DataSetName = "SistemaBibliotecaDataSet";
+            this.sistemaBibliotecaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // autoresTableAdapter
+            // 
+            this.autoresTableAdapter.ClearBeforeFill = true;
+            // 
             // frmAutores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,7 +157,7 @@
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAutores";
             this.Text = "Autores - Libby";
             this.Load += new System.EventHandler(this.FrmAutores_Load);

@@ -365,6 +365,16 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
               <Mapping SourceColumn="Observacoes" DataSetColumn="Observacoes" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="SistemaBibliotecaConnectionString (Settings)" DbObjectName="SistemaBiblioteca.dbo.Livros" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomQuery" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="CustomQuery" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="CustomQuery">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>
+
+SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Livros WHERE (Ativo = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="SistemaBibliotecaConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -402,7 +412,7 @@ SELECT Id, Registro, Titulo, Isbn, Genero, Editora, Sinopse, Observacoes, Ativo,
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LocacaoTableAdapter" GeneratorDataComponentClassName="LocacaoTableAdapter" Name="Locacao" UserDataComponentName="LocacaoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SistemaBibliotecaConnectionString (Settings)" DbObjectName="SistemaBiblioteca.dbo.Locacao" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="SistemaBibliotecaConnectionString (Settings)" DbObjectName="SistemaBiblioteca.dbo.Locacao" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomQuery" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="CustomQuery" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="CustomQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Locacao] WHERE (([Id] = @Original_Id) AND ([Livro] = @Original_Livro) AND ([Usuario] = @Original_Usuario) AND ([Tipo] = @Original_Tipo) AND ([Devolucao] = @Original_Devolucao) AND ([Ativo] = @Original_Ativo) AND ([UsuInc] = @Original_UsuInc) AND ([UsuAlt] = @Original_UsuAlt) AND ([DatInc] = @Original_DatInc) AND ([DatAlt] = @Original_DatAlt))</CommandText>
@@ -438,8 +448,9 @@ SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAl
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Locacao</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>
+SELECT Id, Livro, Usuario, Tipo, Devolucao, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Locacao where Ativo = 1</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -603,6 +614,15 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
               <Mapping SourceColumn="DatAlt" DataSetColumn="DatAlt" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="SistemaBibliotecaConnectionString (Settings)" DbObjectName="SistemaBiblioteca.dbo.Usuario" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomQuery" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="CustomQuery" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="CustomQuery">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>
+SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Usuario WHERE (Ativo = 1)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="SistemaBibliotecaConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -643,7 +663,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
   <xs:element name="SistemaBibliotecaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SistemaBibliotecaDataSet" msprop:Generator_UserDSName="SistemaBibliotecaDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Autores" msprop:Generator_TableClassName="AutoresDataTable" msprop:Generator_TableVarName="tableAutores" msprop:Generator_TablePropName="Autores" msprop:Generator_RowDeletingName="AutoresRowDeleting" msprop:Generator_RowChangingName="AutoresRowChanging" msprop:Generator_RowEvHandlerName="AutoresRowChangeEventHandler" msprop:Generator_RowDeletedName="AutoresRowDeleted" msprop:Generator_UserTableName="Autores" msprop:Generator_RowChangedName="AutoresRowChanged" msprop:Generator_RowEvArgName="AutoresRowChangeEvent" msprop:Generator_RowClassName="AutoresRow">
+        <xs:element name="Autores" msprop:Generator_TableClassName="AutoresDataTable" msprop:Generator_TableVarName="tableAutores" msprop:Generator_RowChangedName="AutoresRowChanged" msprop:Generator_TablePropName="Autores" msprop:Generator_RowDeletingName="AutoresRowDeleting" msprop:Generator_RowChangingName="AutoresRowChanging" msprop:Generator_RowEvHandlerName="AutoresRowChangeEventHandler" msprop:Generator_RowDeletedName="AutoresRowDeleted" msprop:Generator_RowClassName="AutoresRow" msprop:Generator_UserTableName="Autores" msprop:Generator_RowEvArgName="AutoresRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -665,7 +685,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Editora" msprop:Generator_TableClassName="EditoraDataTable" msprop:Generator_TableVarName="tableEditora" msprop:Generator_TablePropName="Editora" msprop:Generator_RowDeletingName="EditoraRowDeleting" msprop:Generator_RowChangingName="EditoraRowChanging" msprop:Generator_RowEvHandlerName="EditoraRowChangeEventHandler" msprop:Generator_RowDeletedName="EditoraRowDeleted" msprop:Generator_UserTableName="Editora" msprop:Generator_RowChangedName="EditoraRowChanged" msprop:Generator_RowEvArgName="EditoraRowChangeEvent" msprop:Generator_RowClassName="EditoraRow">
+        <xs:element name="Editora" msprop:Generator_TableClassName="EditoraDataTable" msprop:Generator_TableVarName="tableEditora" msprop:Generator_RowChangedName="EditoraRowChanged" msprop:Generator_TablePropName="Editora" msprop:Generator_RowDeletingName="EditoraRowDeleting" msprop:Generator_RowChangingName="EditoraRowChanging" msprop:Generator_RowEvHandlerName="EditoraRowChangeEventHandler" msprop:Generator_RowDeletedName="EditoraRowDeleted" msprop:Generator_RowClassName="EditoraRow" msprop:Generator_UserTableName="Editora" msprop:Generator_RowEvArgName="EditoraRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -687,7 +707,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Generos" msprop:Generator_TableClassName="GenerosDataTable" msprop:Generator_TableVarName="tableGeneros" msprop:Generator_TablePropName="Generos" msprop:Generator_RowDeletingName="GenerosRowDeleting" msprop:Generator_RowChangingName="GenerosRowChanging" msprop:Generator_RowEvHandlerName="GenerosRowChangeEventHandler" msprop:Generator_RowDeletedName="GenerosRowDeleted" msprop:Generator_UserTableName="Generos" msprop:Generator_RowChangedName="GenerosRowChanged" msprop:Generator_RowEvArgName="GenerosRowChangeEvent" msprop:Generator_RowClassName="GenerosRow">
+        <xs:element name="Generos" msprop:Generator_TableClassName="GenerosDataTable" msprop:Generator_TableVarName="tableGeneros" msprop:Generator_RowChangedName="GenerosRowChanged" msprop:Generator_TablePropName="Generos" msprop:Generator_RowDeletingName="GenerosRowDeleting" msprop:Generator_RowChangingName="GenerosRowChanging" msprop:Generator_RowEvHandlerName="GenerosRowChangeEventHandler" msprop:Generator_RowDeletedName="GenerosRowDeleted" msprop:Generator_RowClassName="GenerosRow" msprop:Generator_UserTableName="Generos" msprop:Generator_RowEvArgName="GenerosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -708,7 +728,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="LivroAutor" msprop:Generator_TableClassName="LivroAutorDataTable" msprop:Generator_TableVarName="tableLivroAutor" msprop:Generator_TablePropName="LivroAutor" msprop:Generator_RowDeletingName="LivroAutorRowDeleting" msprop:Generator_RowChangingName="LivroAutorRowChanging" msprop:Generator_RowEvHandlerName="LivroAutorRowChangeEventHandler" msprop:Generator_RowDeletedName="LivroAutorRowDeleted" msprop:Generator_UserTableName="LivroAutor" msprop:Generator_RowChangedName="LivroAutorRowChanged" msprop:Generator_RowEvArgName="LivroAutorRowChangeEvent" msprop:Generator_RowClassName="LivroAutorRow">
+        <xs:element name="LivroAutor" msprop:Generator_TableClassName="LivroAutorDataTable" msprop:Generator_TableVarName="tableLivroAutor" msprop:Generator_RowChangedName="LivroAutorRowChanged" msprop:Generator_TablePropName="LivroAutor" msprop:Generator_RowDeletingName="LivroAutorRowDeleting" msprop:Generator_RowChangingName="LivroAutorRowChanging" msprop:Generator_RowEvHandlerName="LivroAutorRowChangeEventHandler" msprop:Generator_RowDeletedName="LivroAutorRowDeleted" msprop:Generator_RowClassName="LivroAutorRow" msprop:Generator_UserTableName="LivroAutor" msprop:Generator_RowEvArgName="LivroAutorRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Livro" msprop:Generator_ColumnVarNameInTable="columnLivro" msprop:Generator_ColumnPropNameInRow="Livro" msprop:Generator_ColumnPropNameInTable="LivroColumn" msprop:Generator_UserColumnName="Livro" type="xs:int" />
@@ -716,7 +736,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Livros" msprop:Generator_TableClassName="LivrosDataTable" msprop:Generator_TableVarName="tableLivros" msprop:Generator_TablePropName="Livros" msprop:Generator_RowDeletingName="LivrosRowDeleting" msprop:Generator_RowChangingName="LivrosRowChanging" msprop:Generator_RowEvHandlerName="LivrosRowChangeEventHandler" msprop:Generator_RowDeletedName="LivrosRowDeleted" msprop:Generator_UserTableName="Livros" msprop:Generator_RowChangedName="LivrosRowChanged" msprop:Generator_RowEvArgName="LivrosRowChangeEvent" msprop:Generator_RowClassName="LivrosRow">
+        <xs:element name="Livros" msprop:Generator_TableClassName="LivrosDataTable" msprop:Generator_TableVarName="tableLivros" msprop:Generator_RowChangedName="LivrosRowChanged" msprop:Generator_TablePropName="Livros" msprop:Generator_RowDeletingName="LivrosRowDeleting" msprop:Generator_RowChangingName="LivrosRowChanging" msprop:Generator_RowEvHandlerName="LivrosRowChangeEventHandler" msprop:Generator_RowDeletedName="LivrosRowDeleted" msprop:Generator_RowClassName="LivrosRow" msprop:Generator_UserTableName="Livros" msprop:Generator_RowEvArgName="LivrosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -759,7 +779,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Locacao" msprop:Generator_TableClassName="LocacaoDataTable" msprop:Generator_TableVarName="tableLocacao" msprop:Generator_TablePropName="Locacao" msprop:Generator_RowDeletingName="LocacaoRowDeleting" msprop:Generator_RowChangingName="LocacaoRowChanging" msprop:Generator_RowEvHandlerName="LocacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="LocacaoRowDeleted" msprop:Generator_UserTableName="Locacao" msprop:Generator_RowChangedName="LocacaoRowChanged" msprop:Generator_RowEvArgName="LocacaoRowChangeEvent" msprop:Generator_RowClassName="LocacaoRow">
+        <xs:element name="Locacao" msprop:Generator_TableClassName="LocacaoDataTable" msprop:Generator_TableVarName="tableLocacao" msprop:Generator_RowChangedName="LocacaoRowChanged" msprop:Generator_TablePropName="Locacao" msprop:Generator_RowDeletingName="LocacaoRowDeleting" msprop:Generator_RowChangingName="LocacaoRowChanging" msprop:Generator_RowEvHandlerName="LocacaoRowChangeEventHandler" msprop:Generator_RowDeletedName="LocacaoRowDeleted" msprop:Generator_RowClassName="LocacaoRow" msprop:Generator_UserTableName="Locacao" msprop:Generator_RowEvArgName="LocacaoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -776,7 +796,7 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Usuario" msprop:Generator_TableClassName="UsuarioDataTable" msprop:Generator_TableVarName="tableUsuario" msprop:Generator_TablePropName="Usuario" msprop:Generator_RowDeletingName="UsuarioRowDeleting" msprop:Generator_RowChangingName="UsuarioRowChanging" msprop:Generator_RowEvHandlerName="UsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuarioRowDeleted" msprop:Generator_UserTableName="Usuario" msprop:Generator_RowChangedName="UsuarioRowChanged" msprop:Generator_RowEvArgName="UsuarioRowChangeEvent" msprop:Generator_RowClassName="UsuarioRow">
+        <xs:element name="Usuario" msprop:Generator_TableClassName="UsuarioDataTable" msprop:Generator_TableVarName="tableUsuario" msprop:Generator_RowChangedName="UsuarioRowChanged" msprop:Generator_TablePropName="Usuario" msprop:Generator_RowDeletingName="UsuarioRowDeleting" msprop:Generator_RowChangingName="UsuarioRowChanging" msprop:Generator_RowEvHandlerName="UsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuarioRowDeleted" msprop:Generator_RowClassName="UsuarioRow" msprop:Generator_UserTableName="Usuario" msprop:Generator_RowEvArgName="UsuarioRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -846,16 +866,16 @@ SELECT Id, Nome, Login, Senha, Email, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Table_Autores" msdata:parent="Autores" msdata:child="LivroAutor" msdata:parentkey="Id" msdata:childkey="Autor" msprop:Generator_UserChildTable="LivroAutor" msprop:Generator_ChildPropName="GetLivroAutorRows" msprop:Generator_UserRelationName="FK_Table_Autores" msprop:Generator_ParentPropName="AutoresRow" msprop:Generator_RelationVarName="relationFK_Table_Autores" msprop:Generator_UserParentTable="Autores" />
-      <msdata:Relationship name="FK_Table_Livros" msdata:parent="Livros" msdata:child="LivroAutor" msdata:parentkey="Id" msdata:childkey="Livro" msprop:Generator_UserChildTable="LivroAutor" msprop:Generator_ChildPropName="GetLivroAutorRows" msprop:Generator_UserRelationName="FK_Table_Livros" msprop:Generator_RelationVarName="relationFK_Table_Livros" msprop:Generator_UserParentTable="Livros" msprop:Generator_ParentPropName="LivrosRow" />
-      <msdata:Relationship name="FK_Livros_Editoras" msdata:parent="Editora" msdata:child="Livros" msdata:parentkey="Id" msdata:childkey="Editora" msprop:Generator_UserChildTable="Livros" msprop:Generator_ChildPropName="GetLivrosRows" msprop:Generator_UserRelationName="FK_Livros_Editoras" msprop:Generator_ParentPropName="EditoraRow" msprop:Generator_RelationVarName="relationFK_Livros_Editoras" msprop:Generator_UserParentTable="Editora" />
-      <msdata:Relationship name="FK_Livros_Generos" msdata:parent="Generos" msdata:child="Livros" msdata:parentkey="Id" msdata:childkey="Genero" msprop:Generator_UserChildTable="Livros" msprop:Generator_ChildPropName="GetLivrosRows" msprop:Generator_UserRelationName="FK_Livros_Generos" msprop:Generator_ParentPropName="GeneroRow" msprop:Generator_RelationVarName="relationFK_Livros_Generos" msprop:Generator_UserParentTable="Generos" />
-      <msdata:Relationship name="FK_Livros_UsuariosAlt" msdata:parent="Usuario" msdata:child="Livros" msdata:parentkey="Id" msdata:childkey="UsuAlt" msprop:Generator_UserChildTable="Livros" msprop:Generator_ChildPropName="GetLivrosRowsByFK_Livros_UsuariosAlt" msprop:Generator_UserRelationName="FK_Livros_UsuariosAlt" msprop:Generator_RelationVarName="relationFK_Livros_UsuariosAlt" msprop:Generator_UserParentTable="Usuario" msprop:Generator_ParentPropName="UsuarioRowByFK_Livros_UsuariosAlt" />
-      <msdata:Relationship name="FK_Livros_UsuariosInc" msdata:parent="Usuario" msdata:child="Livros" msdata:parentkey="Id" msdata:childkey="UsuInc" msprop:Generator_UserChildTable="Livros" msprop:Generator_ChildPropName="GetLivrosRowsByFK_Livros_UsuariosInc" msprop:Generator_UserRelationName="FK_Livros_UsuariosInc" msprop:Generator_RelationVarName="relationFK_Livros_UsuariosInc" msprop:Generator_UserParentTable="Usuario" msprop:Generator_ParentPropName="UsuarioRowByFK_Livros_UsuariosInc" />
-      <msdata:Relationship name="FK_Locacao_Livros" msdata:parent="Livros" msdata:child="Locacao" msdata:parentkey="Id" msdata:childkey="Livro" msprop:Generator_UserChildTable="Locacao" msprop:Generator_ChildPropName="GetLocacaoRows" msprop:Generator_UserRelationName="FK_Locacao_Livros" msprop:Generator_ParentPropName="LivrosRow" msprop:Generator_RelationVarName="relationFK_Locacao_Livros" msprop:Generator_UserParentTable="Livros" />
-      <msdata:Relationship name="FK_Locacao_UsuAlt" msdata:parent="Usuario" msdata:child="Locacao" msdata:parentkey="Id" msdata:childkey="UsuAlt" msprop:Generator_UserChildTable="Locacao" msprop:Generator_ChildPropName="GetLocacaoRowsByFK_Locacao_UsuAlt" msprop:Generator_UserRelationName="FK_Locacao_UsuAlt" msprop:Generator_RelationVarName="relationFK_Locacao_UsuAlt" msprop:Generator_UserParentTable="Usuario" msprop:Generator_ParentPropName="UsuarioRowByFK_Locacao_UsuAlt" />
-      <msdata:Relationship name="FK_Locacao_UsuarioAloc" msdata:parent="Usuario" msdata:child="Locacao" msdata:parentkey="Id" msdata:childkey="Usuario" msprop:Generator_UserChildTable="Locacao" msprop:Generator_ChildPropName="GetLocacaoRowsByFK_Locacao_UsuarioAloc" msprop:Generator_UserRelationName="FK_Locacao_UsuarioAloc" msprop:Generator_RelationVarName="relationFK_Locacao_UsuarioAloc" msprop:Generator_UserParentTable="Usuario" msprop:Generator_ParentPropName="UsuarioRowByFK_Locacao_UsuarioAloc" />
-      <msdata:Relationship name="FK_Locacao_UsuInc" msdata:parent="Usuario" msdata:child="Locacao" msdata:parentkey="Id" msdata:childkey="UsuInc" msprop:Generator_UserChildTable="Locacao" msprop:Generator_ChildPropName="GetLocacaoRowsByFK_Locacao_UsuInc" msprop:Generator_UserRelationName="FK_Locacao_UsuInc" msprop:Generator_RelationVarName="relationFK_Locacao_UsuInc" msprop:Generator_UserParentTable="Usuario" msprop:Generator_ParentPropName="UsuarioRowByFK_Locacao_UsuInc" />
+      <msdata:Relationship name="FK_Table_Autores" msdata:parent="Autores" msdata:child="LivroAutor" msdata:parentkey="Id" msdata:childkey="Autor" msprop:Generator_UserChildTable="LivroAutor" msprop:Generator_ChildPropName="GetLivroAutorRows" msprop:Generator_UserRelationName="FK_Table_Autores" msprop:Generator_RelationVarName="relationFK_Table_Autores" msprop:Generator_UserParentTable="Autores" msprop:Generator_ParentPropName="AutoresRow" />
+      <msdata:Relationship name="FK_Table_Livros" msdata:parent="Livros" msdata:child="LivroAutor" msdata:parentkey="Id" msdata:childkey="Livro" msprop:Generator_UserChildTable="LivroAutor" msprop:Generator_ChildPropName="GetLivroAutorRows" msprop:Generator_UserRelationName="FK_Table_Livros" msprop:Generator_ParentPropName="LivrosRow" msprop:Generator_RelationVarName="relationFK_Table_Livros" msprop:Generator_UserParentTable="Livros" />
+      <msdata:Relationship name="FK_Livros_Editoras" msdata:parent="Editora" msdata:child="Livros" msdata:parentkey="Id" msdata:childkey="Editora" msprop:Generator_UserChildTable="Livros" msprop:Generator_ChildPropName="GetLivrosRows" msprop:Generator_UserRelationName="FK_Livros_Editoras" msprop:Generator_RelationVarName="relationFK_Livros_Editoras" msprop:Generator_UserParentTable="Editora" msprop:Generator_ParentPropName="EditoraRow" />
+      <msdata:Relationship name="FK_Livros_Generos" msdata:parent="Generos" msdata:child="Livros" msdata:parentkey="Id" msdata:childkey="Genero" msprop:Generator_UserChildTable="Livros" msprop:Generator_ChildPropName="GetLivrosRows" msprop:Generator_UserRelationName="FK_Livros_Generos" msprop:Generator_RelationVarName="relationFK_Livros_Generos" msprop:Generator_UserParentTable="Generos" msprop:Generator_ParentPropName="GeneroRow" />
+      <msdata:Relationship name="FK_Livros_UsuariosAlt" msdata:parent="Usuario" msdata:child="Livros" msdata:parentkey="Id" msdata:childkey="UsuAlt" msprop:Generator_UserChildTable="Livros" msprop:Generator_ChildPropName="GetLivrosRowsByFK_Livros_UsuariosAlt" msprop:Generator_UserRelationName="FK_Livros_UsuariosAlt" msprop:Generator_ParentPropName="UsuarioRowByFK_Livros_UsuariosAlt" msprop:Generator_RelationVarName="relationFK_Livros_UsuariosAlt" msprop:Generator_UserParentTable="Usuario" />
+      <msdata:Relationship name="FK_Livros_UsuariosInc" msdata:parent="Usuario" msdata:child="Livros" msdata:parentkey="Id" msdata:childkey="UsuInc" msprop:Generator_UserChildTable="Livros" msprop:Generator_ChildPropName="GetLivrosRowsByFK_Livros_UsuariosInc" msprop:Generator_UserRelationName="FK_Livros_UsuariosInc" msprop:Generator_ParentPropName="UsuarioRowByFK_Livros_UsuariosInc" msprop:Generator_RelationVarName="relationFK_Livros_UsuariosInc" msprop:Generator_UserParentTable="Usuario" />
+      <msdata:Relationship name="FK_Locacao_Livros" msdata:parent="Livros" msdata:child="Locacao" msdata:parentkey="Id" msdata:childkey="Livro" msprop:Generator_UserChildTable="Locacao" msprop:Generator_ChildPropName="GetLocacaoRows" msprop:Generator_UserRelationName="FK_Locacao_Livros" msprop:Generator_RelationVarName="relationFK_Locacao_Livros" msprop:Generator_UserParentTable="Livros" msprop:Generator_ParentPropName="LivrosRow" />
+      <msdata:Relationship name="FK_Locacao_UsuAlt" msdata:parent="Usuario" msdata:child="Locacao" msdata:parentkey="Id" msdata:childkey="UsuAlt" msprop:Generator_UserChildTable="Locacao" msprop:Generator_ChildPropName="GetLocacaoRowsByFK_Locacao_UsuAlt" msprop:Generator_UserRelationName="FK_Locacao_UsuAlt" msprop:Generator_ParentPropName="UsuarioRowByFK_Locacao_UsuAlt" msprop:Generator_RelationVarName="relationFK_Locacao_UsuAlt" msprop:Generator_UserParentTable="Usuario" />
+      <msdata:Relationship name="FK_Locacao_UsuarioAloc" msdata:parent="Usuario" msdata:child="Locacao" msdata:parentkey="Id" msdata:childkey="Usuario" msprop:Generator_UserChildTable="Locacao" msprop:Generator_ChildPropName="GetLocacaoRowsByFK_Locacao_UsuarioAloc" msprop:Generator_UserRelationName="FK_Locacao_UsuarioAloc" msprop:Generator_ParentPropName="UsuarioRowByFK_Locacao_UsuarioAloc" msprop:Generator_RelationVarName="relationFK_Locacao_UsuarioAloc" msprop:Generator_UserParentTable="Usuario" />
+      <msdata:Relationship name="FK_Locacao_UsuInc" msdata:parent="Usuario" msdata:child="Locacao" msdata:parentkey="Id" msdata:childkey="UsuInc" msprop:Generator_UserChildTable="Locacao" msprop:Generator_ChildPropName="GetLocacaoRowsByFK_Locacao_UsuInc" msprop:Generator_UserRelationName="FK_Locacao_UsuInc" msprop:Generator_ParentPropName="UsuarioRowByFK_Locacao_UsuInc" msprop:Generator_RelationVarName="relationFK_Locacao_UsuInc" msprop:Generator_UserParentTable="Usuario" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

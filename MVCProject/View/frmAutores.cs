@@ -36,5 +36,30 @@ namespace MVCProject.View
                 );
             this.autoresTableAdapter.Fill(this.sistemaBibliotecaDataSet.Autores);
         }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var autSelect = ((System.Data.DataRowView)this.dataGridView1.Rows
+            [e.RowIndex]
+            .DataBoundItem).Row as MVCProject.SistemaBibliotecaDataSet.AutoresRow;
+            switch (e.ColumnIndex)
+            {
+                case 2:
+                    {
+                        this.autoresTableAdapter.DeleteQuery(autSelect.Id);
+                    }
+                    break;
+                case 1:
+                   {
+                       frmEditarAutores editAut = new frmEditarAutores();
+                        editAut.AutoresRow = autSelect;
+                        editAut.ShowDialog();
+                       this.autoresTableAdapter.Update(editAut.AutoresRow);
+                
+                   }
+                   break;
+            }
+            this.autoresTableAdapter.Fill(this.sistemaBibliotecaDataSet.Autores);
+        }
     }
 }

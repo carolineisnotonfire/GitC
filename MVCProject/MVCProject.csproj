@@ -113,6 +113,42 @@
     <Compile Include="View\frmAutores.Designer.cs">
       <DependentUpon>frmAutores.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmEditarAutores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmEditarAutores.Designer.cs">
+      <DependentUpon>frmEditarAutores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmEditarEditoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmEditarEditoras.Designer.cs">
+      <DependentUpon>frmEditarEditoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmEditarGeneros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmEditarGeneros.Designer.cs">
+      <DependentUpon>frmEditarGeneros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmEditarLivros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmEditarLivros.Designer.cs">
+      <DependentUpon>frmEditarLivros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmEditarLocacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmEditarLocacao.Designer.cs">
+      <DependentUpon>frmEditarLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmEditarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmEditarUsuarios.Designer.cs">
+      <DependentUpon>frmEditarUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\frmEditora.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +217,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmAutores.resx">
       <DependentUpon>frmAutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmEditarAutores.resx">
+      <DependentUpon>frmEditarAutores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmEditarEditoras.resx">
+      <DependentUpon>frmEditarEditoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmEditarGeneros.resx">
+      <DependentUpon>frmEditarGeneros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmEditarLivros.resx">
+      <DependentUpon>frmEditarLivros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmEditarLocacao.resx">
+      <DependentUpon>frmEditarLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmEditarUsuarios.resx">
+      <DependentUpon>frmEditarUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmEditora.resx">
       <DependentUpon>frmEditora.cs</DependentUpon>

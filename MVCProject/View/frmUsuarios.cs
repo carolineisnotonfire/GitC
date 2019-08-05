@@ -19,11 +19,8 @@ namespace MVCProject.View
 
         private void Frm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet1.Usuario' table. You can move, or remove it, as needed.
-            this.usuarioTableAdapter.Fill(this.sistemaBibliotecaDataSet1.Usuario);
             // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet.Usuario' table. You can move, or remove it, as needed.
-            this.usuarioTableAdapter.Fill(this.sistemaBibliotecaDataSet.Usuario);
-
+            this.usuarioTableAdapter.CustomQuery(this.sistemaBibliotecaDataSet1.Usuario);
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -40,7 +37,33 @@ namespace MVCProject.View
                 true, 1, 1, DateTime.Now, DateTime.Now
 
                 );
-            this.usuarioTableAdapter.Fill(this.sistemaBibliotecaDataSet.Usuario);
+            this.usuarioTableAdapter.CustomQuery(this.sistemaBibliotecaDataSet1.Usuario);
+        }
+
+        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var usuSelect = ((System.Data.DataRowView)this.dataGridView1.Rows
+            [e.RowIndex]
+            .DataBoundItem).Row as MVCProject.SistemaBibliotecaDataSet.UsuarioRow;
+            switch (e.ColumnIndex)
+            {
+                case 1:
+                    {
+                        this.usuarioTableAdapter.DeleteQuery(usuSelect.Id);
+
+                    }
+                    break;
+                case 2:
+                    {
+                        frmEditarUsuarios editUsu = new frmEditarUsuarios();
+                        editUsu.UsuarioRow = usuSelect;
+                        editUsu.ShowDialog();
+                        this.usuarioTableAdapter.Update(editUsu.UsuarioRow);
+                
+                    }
+                    break;
+            }
+            this.usuarioTableAdapter.CustomQuery(this.sistemaBibliotecaDataSet1.Usuario);
         }
     }
 }
