@@ -4,6 +4,9 @@
 
     public partial class SistemaBibliotecaDataSet
     {
+        partial class LivrosDataTable
+        {
+        }
     }
 }
 

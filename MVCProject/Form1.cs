@@ -36,8 +36,8 @@ namespace MVCProject
             }
             else
             {
-                //MessageBox.Show("Login inválido!");
-                throw new Exception("hehe!");
+                MessageBox.Show("Login inválido!");
+                //throw new Exception("hehe!");
 
             }
         }

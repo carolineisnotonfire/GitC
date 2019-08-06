@@ -32,9 +32,9 @@ namespace MVCProject.View
         private void Button1_Click(object sender, EventArgs e)
         {
             this.livroAutorTableAdapter.Insert(LivrosRow.Id,
-            (int)comboBox1.SelectedValue);
+                (int)comboBox1.SelectedValue);
 
-            this.livroAutorTableAdapter.FillBy(this.sistemaBibliotecaDataSet.LivroAutor);
+            this.livroAutorTableAdapter.FillBy(this.sistemaBibliotecaDataSet.LivroAutor, LivrosRow.Id);
         }
     }
 }

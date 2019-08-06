@@ -19,10 +19,13 @@ namespace MVCProject.View
 
         private void FrmLivros_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet.Autores' table. You can move, or remove it, as needed.
-            this.autoresTableAdapter.Fill(this.sistemaBibliotecaDataSet.Autores);
             // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet.Livros' table. You can move, or remove it, as needed.
-            this.livrosTableAdapter.CustomQuery(this.sistemaBibliotecaDataSet.Livros);
+            this.livrosTableAdapter.Fill(this.sistemaBibliotecaDataSet.Livros);
+            // TODO: This line of code loads data into the 'sistemaBibliotecaDataSet.Livros' table. You can move, or remove it, as needed.
+            this.livrosTableAdapter.FillBy1(this.sistemaBibliotecaDataSet.Livros);
+
+
+
 
         }
 
@@ -32,7 +35,7 @@ namespace MVCProject.View
             formAddLiv.ShowDialog();
             if (!string.IsNullOrEmpty(formAddLiv.livroRow?.Titulo))
 
-                this.livrosTableAdapter.Insert(
+                this.livrosTableAdapter.InsertQuery(
                 formAddLiv.livroRow.Registro,
                 formAddLiv.livroRow.Titulo,
                 formAddLiv.livroRow.Isbn,
@@ -59,22 +62,33 @@ namespace MVCProject.View
 
                     }
                     break;
-                    case 2:
-                        {
-                            frmEditarLivros editLic = new frmEditarLivros();
-                        editLic.LivrosRow = livSelect;
-                        editLic.ShowDialog();
-                            this.livrosTableAdapter.Update(editLic.LivrosRow);
-                    
-                        }
-                        break;
+           /// case 2:
+           ///    {
+           ///        frmEditarLivros editLic = new frmEditarLivros();
+           ///    editLic.LivrosRow = livSelect;
+           ///    editLic.ShowDialog();
+           ///        this.livrosTableAdapter.Update(editLic.LivrosRow);
+           /// 
+           ///    }
+                      break;
             }
             this.livrosTableAdapter.CustomQuery(this.sistemaBibliotecaDataSet.Livros);
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //this.autoresTableAdapter.Fill(this.sistemaBibliotecaDataSet.Autores);
+            this.livrosTableAdapter.FillBy(this.sistemaBibliotecaDataSet.Livros
+                , (int)comboBox1.SelectedValue);
+        }
+
+        private void DataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
